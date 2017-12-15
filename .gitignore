@@ -1,0 +1,9 @@
+*.user
+*.vcproj
+*.vcxproj*
+*.sln
+.*project
+.settings
+.idea
+build*/
+cmake-build-*/
