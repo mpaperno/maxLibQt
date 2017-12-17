@@ -1,11 +1,11 @@
 ## Generate Doxygen docs from source
 
-set(DOC_OUTPUT_DIR ${DOC_SRC_DIR} CACHE STRING "Documentation output path.")
+set(DOC_OUTPUT_DIR "${DOC_DIR}" CACHE STRING "Documentation output path.")
 
 find_package(Doxygen)
 
-if(DOXYGEN_FOUND)
-	set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
+if(DOXYGEN_FOUND AND DOC_DIR AND DOC_OUTPUT_DIR)
+	set(DOXYGEN_IN ${DOC_DIR}/Doxyfile.in)
 	set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
 
 	configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
@@ -17,17 +17,18 @@ if(DOXYGEN_FOUND)
 		VERBATIM )
 
 	## clean
+	file(TO_NATIVE_PATH "html/*.html html/*.js html/*.css html/*.png" DOCFILES)
 	if(WIN32)
 		set(RM del /Q)
+		separate_arguments(DOCFILES WINDOWS_COMMAND "${DOCFILES}")
 	else()
 		set(RM rm)
+		separate_arguments(DOCFILES UNIX_COMMAND "${DOCFILES}")
 	endif()
-	file(TO_NATIVE_PATH "html/*.*" DOCFILES)
 	add_custom_target(maxLibQt-doxygen-clean
-		COMMAND ${RM} "${DOCFILES}"
+		COMMAND ${RM} ${DOCFILES}
 		COMMAND ${CMAKE_COMMAND} -E remove_directory html/search
 		WORKING_DIRECTORY ${DOC_OUTPUT_DIR}
+		COMMENT "Deleting stale documentation files."
 		VERBATIM )
-	#add_dependencies(maxLibQt-doxygen maxLibQt-doxygen-clean)
-
 endif()

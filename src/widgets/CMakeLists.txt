@@ -1,33 +1,35 @@
-set(THIS_BIN_NAME maxLibQtWidgets)
-
-project(${THIS_BIN_NAME})
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.12)
 cmake_policy(SET CMP0020 NEW)
-if(POLICY CMP0043)
-  cmake_policy(SET CMP0043 NEW)
-endif()
 set(CMAKE_CXX_STANDARD 11)
+if (CMAKE_VERSION VERSION_LESS "3.1" AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	list(APPEND CMAKE_CXX_FLAGS --std=gnu++11)
+endif ()
+
 find_package(Qt5Core)
 find_package(Qt5Widgets)
-add_definitions(-DQT_USE_QSTRINGBUILDER)
+
+project(maxLibQtWidgets)
 
 set(SRCS
-	ExportableTableView.cpp
-  ScrollableMessageBox.cpp
-  TimerEdit.cpp
-  TreeComboBox.cpp
+	"${CMAKE_CURRENT_LIST_DIR}/ExportableTableView.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/ScrollableMessageBox.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/TimerEdit.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/TreeComboBox.cpp"
 )
 
 set(HDRS
-	ExportableTableView.h
-  ScrollableMessageBox.h
-  TimerEdit.h
-  TreeComboBox.h
+	"${CMAKE_CURRENT_LIST_DIR}/ExportableTableView.h"
+	"${CMAKE_CURRENT_LIST_DIR}/ScrollableMessageBox.h"
+	"${CMAKE_CURRENT_LIST_DIR}/TimerEdit.h"
+	"${CMAKE_CURRENT_LIST_DIR}/TreeComboBox.h"
 )
 
 qt5_wrap_cpp(SRCS ${HDRS})
 
-add_library(${THIS_BIN_NAME} ${SRCS} ${HDRS})
-qt5_use_modules(${THIS_BIN_NAME} Core Widgets)
+add_library(${PROJECT_NAME} ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Widgets)
+target_compile_definitions(${PROJECT_NAME} PRIVATE QT_USE_QSTRINGBUILDER)
+target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
 
-set(BUILT_LIBRARIES ${BUILT_LIBRARIES} ${THIS_BIN_NAME} PARENT_SCOPE)
+# need to push this upstream
+set(BUILT_LIBRARIES ${BUILT_LIBRARIES} ${PROJECT_NAME} PARENT_SCOPE)
