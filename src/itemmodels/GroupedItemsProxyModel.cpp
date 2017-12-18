@@ -24,7 +24,7 @@
 	A copy of the GNU General Public License is available at <http://www.gnu.org/licenses/>.
 */
 
-#include "groupeditemsproxymodel.h"
+#include "GroupedItemsProxyModel.h"
 
 #include <QDebug>
 #include <QQueue>

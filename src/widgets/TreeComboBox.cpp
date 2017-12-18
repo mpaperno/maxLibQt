@@ -24,7 +24,7 @@
 	A copy of the GNU General Public License is available at <http://www.gnu.org/licenses/>.
 */
 
-#include "treecombobox.h"
+#include "TreeComboBox.h"
 
 #include <QAccessible>
 #include <QGuiApplication>
