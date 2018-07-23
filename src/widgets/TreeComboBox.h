@@ -245,4 +245,22 @@ class TreeComboBox : public QComboBox
 		bool m_skipNextHide;
 };
 
+
+/**
+   \class TreeComboBoxView
+   \brief QTreeView subclass used to display the combo box popup items. Only needed to compute the column width.
+          We could do this from within TreeComboBox, except that sizeHintForColumn() is protected and is apparently the only way to get a reasonable width. :-|
+*/
+
+class TreeComboBoxView : public QTreeView
+{
+	Q_OBJECT
+	public:
+		inline void adjustWidth(int maxWidth) {
+			resizeColumnToContents(0);
+			setMaximumWidth(maxWidth);
+			setMinimumWidth(qMin(qMax(sizeHintForColumn(0), minimumSizeHint().width()), maxWidth) + verticalScrollBar()->sizeHint().width() + indentation());
+		}
+};
+
 #endif // TREECOMBOBOX_H

@@ -102,24 +102,6 @@ QSize TreeComboItemDelegate::sizeHint(const QStyleOptionViewItem &option, const 
 }
 
 
-
-/*
-   TreeComboBoxView
-*/
-
-class TreeComboBoxView : public QTreeView
-{
-	Q_OBJECT
-	public:
-		inline void adjustWidth(int maxWidth) {
-			// We could do this from within TreeComboBox, except that sizeHintForColumn() is protected and is apparently the only way to get a reasonable width. :-|
-			resizeColumnToContents(0);
-			setMaximumWidth(maxWidth);
-			setMinimumWidth(qMin(qMax(sizeHintForColumn(0), minimumSizeHint().width()), maxWidth) + verticalScrollBar()->sizeHint().width() + indentation());
-		}
-};
-
-
 /*
    TreeComboBox
 */
