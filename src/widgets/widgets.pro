@@ -5,7 +5,6 @@ QT += core widgets
 
 DESTDIR = $${OUT_PWD}/bin
 DEFINES += QT_USE_QSTRINGBUILDER
-INCLUDEPATH += $$PWD
 
 include(maxLibQtWidgets.pri)
 

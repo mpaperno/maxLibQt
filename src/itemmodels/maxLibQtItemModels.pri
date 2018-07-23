@@ -1,4 +1,6 @@
 
+INCLUDEPATH += $$PWD
+
 HEADERS += \
   $$PWD/GroupedItemsProxyModel.h
 

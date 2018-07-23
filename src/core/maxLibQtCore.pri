@@ -1,5 +1,7 @@
 ## maxLibQtCore
 
+INCLUDEPATH += $$PWD
+
 HEADERS += \
   $$PWD/AppDebugMessageHandler.h
 
