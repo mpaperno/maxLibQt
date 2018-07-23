@@ -31,6 +31,9 @@ import QtQuick.Controls 2.3
 /*!
 	\brief MLDoubleSpinBox is a drop-in replacement for QtQuick Controls 2 SpinBox which can handle double-precision numbers up to any decimal places.
 
+	This control also works fine for integers, with the added bonus of a much wider range of valid numbers (because doubles are used as the basis instead of ints).
+	This includes being able to handle unsigned ints, something the base SpinBox can't do.
+
 	Use the \p decimals property to control precision.
 
 	The only caveat is that to style the SpinBox using Controls 2 themes (Fusion/Material/etc) you need to apply the styling to the \p spinBoxItem
@@ -65,6 +68,7 @@ FocusScope {
 	property int decimals: 2                  //! Desired precision
 	property int notation: DoubleValidator.StandardNotation   //! For validator and text formatting
 	property string tooltip                   //! Passed to SpinBox::ToolTip.text.
+	property string inputMask                 //! Input mask for the text edit control (\sa TextInput::inputMask).
 	property bool selectByMouse: true         //! Whether to allow selection of text (bound to the text editor of the spinbox control).
 	property bool useLocaleFormat: true       //! Whether to format numbers according to the current locale. If false, use standard "C" format.
 	property bool showGroupSeparator: true    //! Whether to format numbers with the thousands separator visible (using current locale if useLocaleFormat is true).
@@ -219,6 +223,12 @@ FocusScope {
 		target: control.textInputItem
 		property: "selectByMouse"
 		value: control.selectByMouse
+	}
+
+	Binding {
+		target: control.textInputItem
+		property: "inputMask"
+		value: control.inputMask
 	}
 
 	// Timer for firing the +/- button repeat events while they're held down.
