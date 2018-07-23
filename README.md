@@ -22,7 +22,8 @@ The target Qt version is 5.2 and up.  Some components may work with earlier vers
 **QML Components:**
 
 * Controls
-  * `TDDoubleSpinBox` - A SpinBox control which handles floats/doubles to the desired precision. Avoids all limitations of the current QtQuick Controls (v2.0 - 2.4) SpinBox but still using the current style (Fusion/Material/etc).
+  * `MLDoubleSpinBox` - A SpinBox control which handles floats/doubles to the desired precision. Avoids all limitations of the current QtQuick Controls (v2.0 - 2.4) SpinBox but still using the current style (Fusion/Material/etc).
+  * `MLHexSpinBox` - A SpinBox control which allows editing integers in hexadeciaml format. Allows a wide range of numbers, including unsigned (32b) integers. Based on `MLDoubleSpinBox`.
 
 ***Documentation:***
 
