@@ -73,6 +73,7 @@ FocusScope {
 	property bool useLocaleFormat: true       //! Whether to format numbers according to the current locale. If false, use standard "C" format.
 	property bool showGroupSeparator: true    //! Whether to format numbers with the thousands separator visible (using current locale if useLocaleFormat is true).
 	property bool trimExtraZeros: true        //! Whether to remove leading zeros from whole numbers and trailing zeros from decimals.
+	property int pageSteps: 10                //! How many steps in a "page" step (PAGE UP/DOWN keys or CTRL-Wheel).
 	property int buttonRepeatDelay: 300       //! Milliseconds to delay before held +/- button repeat is activated.
 	property int buttonRepeatInterval: 100    //! +/- button repeat interval while held (in milliseconds).
 
@@ -103,11 +104,15 @@ FocusScope {
 		stepBy(-1);
 	}
 
-	function stepBy(steps) {
+	//! Adjust value by number of \p steps. (Each step size is determined by the spin box stepSize property.)
+	//! \param noWrap (optional) If true will prevent wrapping even if the spin box \e wrap property is true. Default is false.
+	function stepBy(steps, noWrap) {
 		// always use current editor value in case user has changed it w/out losing focus
-		setValue(textValue() + (stepSize * steps));
+		setValue(textValue() + (stepSize * steps), noWrap);
 	}
 
+	//! Set the spin box value to \p newValue. This is generally preferable to setting the \e value spin box property directly, but not required.
+	//! \param noWrap (optional) If true will prevent wrapping even if the spin box \e wrap property is true. Default is false.
 	function setValue(newValue, noWrap)
 	{
 		if (!wrap || noWrap)
@@ -120,7 +125,9 @@ FocusScope {
 		newValue = Math.round(newValue * factor) * divisor;  // normalize
 
 		if (value !== newValue) {
+			isValidated = true;
 			value = newValue;
+			isValidated = false;
 			valueModified();
 			if (spinBoxItem)
 				spinBoxItem.value = 0;  // reset this to prevent it from disabling the buttons or other weirdness
@@ -136,24 +143,28 @@ FocusScope {
 		if (useLocaleFormat && locale) {
 			text = value.toLocaleString(locale, (useStdNotation ? 'f' : 'g'), prec);
 			if (!showGroupSeparator)
-				text = text.replace(new RegExp(locale.groupSeparator, "g"), "");
+				text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
 		}
 		else if (useStdNotation)
 			text = value.toFixed(prec);
 		else
 			text = value.toExponential(prec);
-		if (trimExtraZeros)
-			text = text.replace(/\.0*$|(\.\d*[1-9])(0+)$|^0+(?!\.|\b)/, "$1");
+		if (trimExtraZeros) {
+			var pt = locale ? locale.decimalPoint : ".";
+			var re = "\\" + pt + "0*$|(\\" + pt + "\\d*[1-9])(0+)$|^0+(?!\\" + pt + "|\\b)";
+			text = text.replace(new RegExp(re), "$1");
+		}
 		return text;
 	}
 
 	function valueFromText(text, locale)
 	{
 		// We don't use Number::fromLocaleString because it throws errors when the input format isn't valid, eg. thousands separator in the wrong place. D'oh.
-		if (useStdNotation)
-			text = text.replace(/[^\+\-\d\.]+/g, "");
-		else
-			text = text.replace(/[^\+\-\d\.eE]+/g, "");
+		var re = "[^\\+\\-\\d\\" + (locale ? locale.decimalPoint : ".");
+		if (!useStdNotation)
+			re = re + "eE";
+		re = re + "]+";
+		text = text.replace(new RegExp(re, "g"), "");
 		if (!text.length)
 			text = "0";
 		//console.log(text, parseFloat(text).toFixed(control.decimals));
@@ -162,12 +173,30 @@ FocusScope {
 
 	// internals
 
+	property bool isValidated: false
 	readonly property real factor: Math.pow(10, Math.max(decimals, 0))  // this is a 'real' type (vs. int) to allow for > 9 decimals
 	readonly property real divisor: 1.0 / factor
 	readonly property bool useStdNotation: notation === DoubleValidator.StandardNotation
 
 	function textValue() {
 		return textInputItem ? valueFromText(textInputItem.text, locale) : 0
+	}
+
+	function handleKeyEvent(event) {
+		var steps = 0;
+		if (event.key === Qt.Key_Up)
+			steps = 1;
+		else if (event.key === Qt.Key_Down)
+			steps = -1;
+		else if (event.key === Qt.Key_PageUp)
+			steps = control.pageSteps;
+		else if (event.key === Qt.Key_PageDown)
+			steps = -control.pageSteps;
+		else if (event.key !== Qt.Key_Enter && event.key !== Qt.Key_Return)
+			return;
+
+		event.accepted = true;
+		control.stepBy(steps, (steps === 0));
 	}
 
 	function toggleButtonPress(press, increment)
@@ -187,7 +216,7 @@ FocusScope {
 
 	function updateUi() {
 		if (textInputItem)
-			textInputItem.text = textFromValue(value, locale)
+			textInputItem.text = textFromValue(value, locale);
 
 		if (!wrap && spinBoxItem) {
 			if (spinBoxItem.up && spinBoxItem.up.indicator)
@@ -197,8 +226,20 @@ FocusScope {
 		}
 	}
 
-	onValueChanged: updateUi()
+	onValueChanged: {
+		if (!isValidated)
+			setValue(value, true);
+		updateUi();
+	}
+
+	// We need to override spin box arrow key events to distinguish from +/- button presses, otherwise we get double repeats.
+	onSpinBoxItemChanged: {
+		if (spinBoxItem)
+			spinBoxItem.Keys.forwardTo = [control];
+	}
+
 	Component.onCompleted: updateUi()
+	Keys.onPressed: handleKeyEvent(event)
 
 	Connections {
 		target: control.spinBoxItem.up
@@ -268,12 +309,15 @@ FocusScope {
 	// Wheel/scroll action detection area
 	MouseArea {
 		anchors.fill: control
+		z: control.spinBoxItem ? control.spinBoxItem.z + 1 : control.z + 1
 		acceptedButtons: Qt.NoButton
 		enabled: control.wheelEnabled
 		onWheel: {
 			var delta = (wheel.angleDelta.y === 0.0 ? -wheel.angleDelta.x : wheel.angleDelta.y) / 120;
 			if (wheel.inverted)
 				delta *= -1;
+			if (wheel.modifiers & Qt.ControlModifier)
+				delta *= control.pageSteps;
 			control.stepBy(delta);
 		}
 	}
