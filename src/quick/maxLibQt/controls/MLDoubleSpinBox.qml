@@ -56,13 +56,14 @@ FocusScope {
 	property double value: 0.0
 	property double from: 0.0
 	property double to: 100.0
-	property double stepSize: Math.max(divisor, 0.0001)   //! Default step size is based on desired precision but only up to 4 decimals.
+	property double stepSize: 1.0
 	property bool editable: true
 	property bool wrap: true
 	property bool wheelEnabled: !editable || (textInputItem && textInputItem.activeFocus)   //! By default wheel is enabled only if editor has active focus or item is not editable.
 	property int inputMethodHints: Qt.ImhFormattedNumbersOnly
 	property font font: Qt.application.font
 	property var locale: Qt.locale()
+	readonly property string displayText: textInputItem ? textInputItem.text : ""
 
 	// Custom properties
 	property int decimals: 2                  //! Desired precision
@@ -122,7 +123,7 @@ FocusScope {
 		else if (newValue > control.topValue)
 			newValue = control.botValue;
 
-		newValue = Math.round(newValue * factor) * divisor;  // normalize
+		newValue = Number(newValue.toFixed(Math.max(decimals, 0)));  // round
 
 		if (value !== newValue) {
 			isValidated = true;
@@ -174,8 +175,6 @@ FocusScope {
 	// internals
 
 	property bool isValidated: false
-	readonly property real factor: Math.pow(10, Math.max(decimals, 0))  // this is a 'real' type (vs. int) to allow for > 9 decimals
-	readonly property real divisor: 1.0 / factor
 	readonly property bool useStdNotation: notation === DoubleValidator.StandardNotation
 
 	function textValue() {
