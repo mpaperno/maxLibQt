@@ -30,62 +30,57 @@ import QtQuick.Controls 2.3
 
 /*!
 	\brief MLDoubleSpinBox is a drop-in replacement for QtQuick Controls 2 SpinBox which can handle double-precision numbers up to any decimal places.
+	       It supports the SpinBox API of version 2.4 (Qt 5.11) but can be used with any version of QtQuick Controls 2 (Qt v5+).
 
 	This control also works fine for integers, with the added bonus of a much wider range of valid numbers (because doubles are used as the basis instead of ints).
 	This includes being able to handle unsigned ints, something the base SpinBox can't do.
 
-	Use the \p decimals property to control precision.
+	It has mostly the same properties, methods, and signal as SpinBox, except the value/from/to/stepSize properties are doubles.
+  The only exception are the \e up and \e down group, which could be accessed directly via \p spinBoxItem.
+  It also has a number of other custom properties not found in the default SpinBox (see inline documentation below).
 
-	The only caveat is that to style the SpinBox using Controls 2 themes (Fusion/Material/etc) you need to apply the styling to the \p spinBoxItem
-	property insted of directly to MLDoubleSpinBox (which in itself is not a Control and therefore doesn't have a theme).
-	For example:  `spinBoxItem.Material.accent: Material.Pink`
+	Use the \p decimals property to control precision (default is 2).
+
+	In addition to the regular SpinBox controls (arrow keys/wheel-scroll), it reacts to Page Up/Down keys and CTRL-scroll for page-sized steps (\sa pageSteps property).
 
 	Individual property documentation can be found inline.
 */
 
-FocusScope {
+Control {
 	id: control
 	objectName: "MLDoubleSpinBox"
 
-	implicitWidth: spinBoxItem ? spinBoxItem.implicitWidth : 0
-	implicitHeight: spinBoxItem ? spinBoxItem.implicitHeight : 0
-
-	signal valueModified()   //! Mimic SpinBox API
-
-	// Standard SpinBox API properties
+	// Standard SpinBox API properties (v2.4)
 	property double value: 0.0
 	property double from: 0.0
 	property double to: 100.0
 	property double stepSize: 1.0
 	property bool editable: true
 	property bool wrap: true
-	property bool wheelEnabled: !editable || (textInputItem && textInputItem.activeFocus)   //! By default wheel is enabled only if editor has active focus or item is not editable.
 	property int inputMethodHints: Qt.ImhFormattedNumbersOnly
-	property font font: Qt.application.font
-	property var locale: Qt.locale()
-	readonly property string displayText: textInputItem ? textInputItem.text : ""
+	readonly property string displayText: textValue()
+	readonly property bool inputMethodComposing: textInputItem ? textInputItem.inputMethodComposing : false
 
 	// Custom properties
 	property int decimals: 2                  //! Desired precision
 	property int notation: DoubleValidator.StandardNotation   //! For validator and text formatting
-	property string tooltip                   //! Passed to SpinBox::ToolTip.text.
 	property string inputMask                 //! Input mask for the text edit control (\sa TextInput::inputMask).
 	property bool selectByMouse: true         //! Whether to allow selection of text (bound to the text editor of the spinbox control).
 	property bool useLocaleFormat: true       //! Whether to format numbers according to the current locale. If false, use standard "C" format.
 	property bool showGroupSeparator: true    //! Whether to format numbers with the thousands separator visible (using current locale if useLocaleFormat is true).
-	property bool trimExtraZeros: true        //! Whether to remove leading zeros from whole numbers and trailing zeros from decimals.
+	property bool trimExtraZeros: true        //! Whether to remove trailing zeros from decimals.
 	property int pageSteps: 10                //! How many steps in a "page" step (PAGE UP/DOWN keys or CTRL-Wheel).
 	property int buttonRepeatDelay: 300       //! Milliseconds to delay before held +/- button repeat is activated.
 	property int buttonRepeatInterval: 100    //! +/- button repeat interval while held (in milliseconds).
 
-	// Read-only attributes
 	readonly property bool acceptableInput: textInputItem && textInputItem.acceptableInput   //! Indicates if input is valid (it would be nicer if the validator would expose an "isValid" prop/method!).
 	readonly property real topValue: Math.max(from, to)                                      //! The effective maximum value
 	readonly property real botValue: Math.min(from, to)                                      //! The effective minimum value
 
-	// The SpinBox item (could be replaced with a custom one)
-	property Control spinBoxItem: spinBox
-	// Use the "native" text editor of the SpinBox to preserve look/feel.
+	//! The SpinBox item. To use a custom one, replace the \p contentItem with a class derived from Controls 2.x SpinBox.
+	//! Or use any other \p contentItem (or even \e null) and (optionally) set the \p textInputItem to some \e Item with a \p text property for a custom display.
+	readonly property SpinBox spinBoxItem: contentItem
+	//! Use the "native" text editor of the SpinBox to preserve look/feel. If you use a custom SpinBox, you may need to set this property also. If defined, it must have a \e text property.
 	property Item textInputItem: spinBoxItem ? spinBoxItem.contentItem : null
 
 	property QtObject validator: DoubleValidator {
@@ -94,8 +89,29 @@ FocusScope {
 		bottom: control.botValue
 		decimals: Math.max(control.decimals, 0)
 		notation: control.notation
-		locale: control.useLocaleFormat && control.locale ? control.locale.name : "C"
+		locale: control.useLocaleFormat ? control.locale.name : "C"
 	}
+
+	// signals
+
+	signal valueModified()   //! Mimic SpinBox API (interactive change only, NOT emitted if \e value property is set directly).
+
+	// QtQuick Control properties
+
+	wheelEnabled: !editable || (textInputItem && textInputItem.activeFocus)   //! By default wheel is enabled only if editor has active focus or item is not editable.
+
+	// The spin box itself... it's really only here for its buttons and overall formatting, we ignore its actual value/etc.
+	contentItem: SpinBox {
+		width: control.availableWidth
+		height: control.availableHeight
+		editable: control.editable
+		inputMethodHints: control.inputMethodHints
+		validator: control.validator
+		from: -0x7FFFFFFF; to: 0x7FFFFFFF;  // prevent interference with our real from/to values
+		// wrap peroperty is set below as a Binding in case SpinBox vesion is < 2.3 (Qt 5.10).
+	}
+
+	// public function API
 
 	function increase() {
 		stepBy(1);
@@ -114,7 +130,9 @@ FocusScope {
 
 	//! Set the spin box value to \p newValue. This is generally preferable to setting the \e value spin box property directly, but not required.
 	//! \param noWrap (optional) If true will prevent wrapping even if the spin box \e wrap property is true. Default is false.
-	function setValue(newValue, noWrap)
+	//! \param notModified (optional) If true will prevent the \e valueModified() signal from being emitted. Default is false.
+	//! \returns bool True if value was updated (that is, it did not equal the old value), false otherwise.
+	function setValue(newValue, noWrap, notModified)
 	{
 		if (!wrap || noWrap)
 			newValue = Math.max(Math.min(newValue, control.topValue), control.botValue);
@@ -129,40 +147,55 @@ FocusScope {
 			isValidated = true;
 			value = newValue;
 			isValidated = false;
-			valueModified();
+			if (!notModified)
+				valueModified();
 			if (spinBoxItem)
 				spinBoxItem.value = 0;  // reset this to prevent it from disabling the buttons or other weirdness
 			//console.log(newValue.toFixed(control.decimals));
+			return true;
 		}
+		return false;
 	}
 
+	//! Reimplimented from SpinBox
 	function textFromValue(value, locale)
 	{
 		var text = "0",
-				prec = Math.max(decimals, 0);
+				prec = Math.max(decimals, 0),
+				useStd = (notation === DoubleValidator.StandardNotation);
 		value = Number(value);
-		if (useLocaleFormat && locale) {
-			text = value.toLocaleString(locale, (useStdNotation ? 'f' : 'g'), prec);
+
+		if (useLocaleFormat) {
+			if (!locale)
+				locale = control.locale;
+			text = value.toLocaleString(locale, (useStd ? 'f' : 'g'), prec);
 			if (!showGroupSeparator)
 				text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
 		}
-		else if (useStdNotation)
+		else if (useStd) {
 			text = value.toFixed(prec);
-		else
+		}
+		else {
 			text = value.toExponential(prec);
+		}
 		if (trimExtraZeros) {
 			var pt = locale ? locale.decimalPoint : ".";
-			var re = "\\" + pt + "0*$|(\\" + pt + "\\d*[1-9])(0+)$|^0+(?!\\" + pt + "|\\b)";
+			var re = "\\" + pt + "0*$|(\\" + pt + "\\d*[1-9])(0+)$";
 			text = text.replace(new RegExp(re), "$1");
 		}
+
 		return text;
 	}
 
+	//! Reimplimented from SpinBox
 	function valueFromText(text, locale)
 	{
 		// We don't use Number::fromLocaleString because it throws errors when the input format isn't valid, eg. thousands separator in the wrong place. D'oh.
-		var re = "[^\\+\\-\\d\\" + (locale ? locale.decimalPoint : ".");
-		if (!useStdNotation)
+		text = String(text);
+		if (useLocaleFormat && !locale)
+			locale = control.locale;
+		var re = "[^\\+\\-\\d\\" + (useLocaleFormat ? locale.decimalPoint : ".");
+		if (notation !== DoubleValidator.StandardNotation)
 			re = re + "eE";
 		re = re + "]+";
 		text = text.replace(new RegExp(re, "g"), "");
@@ -175,10 +208,23 @@ FocusScope {
 	// internals
 
 	property bool isValidated: false
-	readonly property bool useStdNotation: notation === DoubleValidator.StandardNotation
 
+	//! Equivalent to the \p displayText property
 	function textValue() {
-		return textInputItem ? valueFromText(textInputItem.text, locale) : 0
+		return textInputItem ? valueFromText(textInputItem.text, locale) : 0;
+	}
+
+	//! Set the display text directly, ** without updating the numeric \p value property **.
+	function setTextValue(text, locale) {
+		if (textInputItem)
+			textInputItem.text = textFromValue(valueFromText(text, locale), locale);
+	}
+
+	//! Update the current value and/or formatting of the displayed text. In mnost cases one would use \e setValue() .
+	function updateValueFromText() {
+		var val = textValue();
+		if (!setValue(val, true))
+			setTextValue(val);  // make sure the text is formatted anyway
 	}
 
 	function handleKeyEvent(event) {
@@ -195,7 +241,11 @@ FocusScope {
 			return;
 
 		event.accepted = true;
-		control.stepBy(steps, (steps === 0));
+
+		if (steps)
+			stepBy(steps);
+		else
+			updateValueFromText();
 	}
 
 	function toggleButtonPress(press, increment)
@@ -227,7 +277,7 @@ FocusScope {
 
 	onValueChanged: {
 		if (!isValidated)
-			setValue(value, true);
+			setValue(value, true, true);
 		updateUi();
 	}
 
@@ -241,12 +291,12 @@ FocusScope {
 	Keys.onPressed: handleKeyEvent(event)
 
 	Connections {
-		target: control.spinBoxItem.up
+		target: control.spinBoxItem ? control.spinBoxItem.up : null
 		onPressedChanged: control.toggleButtonPress(control.spinBoxItem.up.pressed, true)
 	}
 
 	Connections {
-		target: control.spinBoxItem.down
+		target: control.spinBoxItem ? control.spinBoxItem.down : null
 		onPressedChanged: control.toggleButtonPress(control.spinBoxItem.down.pressed, false)
 	}
 
@@ -255,8 +305,16 @@ FocusScope {
 		// Checking active focus works better than onEditingFinished because the latter doesn't fire if input is invalid (nor does it fix it up automatically).
 		onActiveFocusChanged: {
 			if (!control.textInputItem.activeFocus)
-				control.setValue(control.textValue(), /* noWrap = */ true);
+				control.updateValueFromText();
 		}
+	}
+
+	// We use a binding here just in case the resident SpinBox is older than v2.3
+	Binding {
+		target: control.spinBoxItem
+		when: control.spinBoxItem && typeof control.spinBoxItem.wrap !== "undefined"
+		property: "wrap"
+		value: control.wrap
 	}
 
 	Binding {
@@ -289,26 +347,10 @@ FocusScope {
 		}
 	}
 
-	// The spin box itself... it's really only here for its buttons and overall formatting, we ignore its actual value/etc.
-	SpinBox {
-		id: spinBox
-		anchors.fill: parent
-		enabled: control.enabled
-		wrap: control.wrap
-		editable: control.editable
-		font: control.font
-		locale: control.locale
-		inputMethodHints: control.inputMethodHints
-		validator: control.validator
-		ToolTip.text: control.tooltip
-		from: -0x7FFFFFFF
-		to: 0x7FFFFFFF
-	}
-
 	// Wheel/scroll action detection area
 	MouseArea {
 		anchors.fill: control
-		z: control.spinBoxItem ? control.spinBoxItem.z + 1 : control.z + 1
+		z: control.contentItem.z + 1
 		acceptedButtons: Qt.NoButton
 		enabled: control.wheelEnabled
 		onWheel: {
