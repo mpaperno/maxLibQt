@@ -168,7 +168,7 @@ Control {
 		if (useLocaleFormat) {
 			if (!locale)
 				locale = control.locale;
-			text = value.toLocaleString(locale, (useStd ? 'f' : 'g'), prec);
+			text = value.toLocaleString(locale, (useStd ? 'f' : 'e'), prec);
 			if (!showGroupSeparator)
 				text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
 		}
@@ -196,9 +196,9 @@ Control {
 			locale = control.locale;
 		var re = "[^\\+\\-\\d\\" + (useLocaleFormat ? locale.decimalPoint : ".");
 		if (notation !== DoubleValidator.StandardNotation)
-			re = re + "eE";
+			re = re + (useLocaleFormat ? locale.exponential : "e");
 		re = re + "]+";
-		text = text.replace(new RegExp(re, "g"), "");
+		text = text.replace(new RegExp(re, "gi"), "");
 		if (!text.length)
 			text = "0";
 		//console.log(text, parseFloat(text).toFixed(control.decimals));
@@ -208,6 +208,7 @@ Control {
 	// internals
 
 	property bool isValidated: false
+	property bool completed: false
 
 	//! Get numeric value from current text
 	function textValue() {
@@ -276,6 +277,8 @@ Control {
 	}
 
 	onValueChanged: {
+		if (!completed)
+			return;
 		if (!isValidated)
 			setValue(value, true, true);
 		updateUi();
@@ -287,7 +290,13 @@ Control {
 			spinBoxItem.Keys.forwardTo = [control];
 	}
 
-	Component.onCompleted: updateUi()
+	Component.onCompleted: {
+		completed = true;
+		// An initial value may have been set, but not validated. Do that now.
+		if (!setValue(value, true, true))
+			updateUi();  // in case it hasn't changed
+	}
+
 	Keys.onPressed: handleKeyEvent(event)
 
 	Connections {
