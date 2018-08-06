@@ -58,7 +58,7 @@ Control {
 	property bool editable: true
 	property bool wrap: true
 	property int inputMethodHints: Qt.ImhFormattedNumbersOnly
-	readonly property string displayText: textValue()
+	readonly property string displayText: textFromValue(value)
 	readonly property bool inputMethodComposing: textInputItem ? textInputItem.inputMethodComposing : false
 
 	// Custom properties
@@ -209,7 +209,7 @@ Control {
 
 	property bool isValidated: false
 
-	//! Equivalent to the \p displayText property
+	//! Get numeric value from current text
 	function textValue() {
 		return textInputItem ? valueFromText(textInputItem.text, locale) : 0;
 	}
