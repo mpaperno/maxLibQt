@@ -1,6 +1,37 @@
+/*
+	This file is part of maxLibQt
+	https://github.com/mpaperno/maxLibQt
+
+	COPYRIGHT: (c)2018 Maxim Paperno; All Right Reserved.
+	Contact: http://www.WorldDesign.com/contact
+
+	LICENSE:
+
+	Commercial License Usage
+	Licensees holding valid commercial licenses may use this file in
+	accordance with the terms contained in a written agreement between
+	you and the copyright holder.
+
+	GNU General Public License Usage
+	Alternatively, this file may be used under the terms of the GNU
+	General Public License as published by the Free Software Foundation,
+	either version 3 of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	A copy of the GNU General Public License is available at <http://www.gnu.org/licenses/>.
+*/
+
 import QtQuick 2.10
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
+
+/*
+	Testing page for maxLibQt QtQuick Controls components.
+*/
 
 ScrollView {
 	id: root
