@@ -44,6 +44,24 @@ import QtQuick.Controls 2.3
 	In addition to the regular SpinBox controls (arrow keys/wheel-scroll), it reacts to Page Up/Down keys and CTRL-scroll for page-sized steps (\sa pageSteps property).
 
 	Individual property documentation can be found inline.
+
+	\note About the \p prefix and \p suffix properties:
+
+	This SpinBox does add \p prefix and \p suffix properties, but it is not in an ideal way. Specifically, in an
+	editable spin box, the cursor is not placed in the correct position for editing the actual value (user can start typing
+	before/after/in middle of prefix/suffix). It does still work and will auto-correct properly after editing is
+	finished, but it is a bit awkward at best.  They do work nicely in a non-editable spin box.
+
+	To achieve proper prefix/suffix support, the best way would be to use a custom QValidator, just like the Controls 1
+	SpinBox does (or did... RIP). (search for QQuickSpinBoxValidator1) The other way is to use an input mask.
+	Unfortunately Qt support for input masks is rather limited, and as a result one has to use a very specific mask (with
+	the correct number of digits, notation type, localized, etc.). The number has to be typed/formatted exactly to the
+	mask. This is not very user-friendly either, except in specific circumstances. Also the DoubleValidator does not work with
+	input masks, so we need a custom validator in any case (see \e regExpValidator below).
+
+	The accompanying tests.qml file in this folder has an example of a customized spin box using an input mask with prefix
+	and suffix. It is pretty generalized, but for standard notation only.
+
 */
 
 Control {
@@ -57,6 +75,7 @@ Control {
 	property double stepSize: 1.0
 	property bool editable: true
 	property bool wrap: true
+	property QtObject validator: doubleValidator    //! There are 2 validators available, see notes for each below.
 	property int inputMethodHints: Qt.ImhFormattedNumbersOnly
 	readonly property string displayText: textFromValue(value, effectiveLocale)
 	readonly property bool inputMethodComposing: textInputItem ? textInputItem.inputMethodComposing : false
@@ -69,10 +88,13 @@ Control {
 	property bool useLocaleFormat: true       //! Whether to format numbers according to the current locale. If false, use standard "C" format.
 	property bool showGroupSeparator: true    //! Whether to format numbers with the thousands separator visible (using current locale if useLocaleFormat is true).
 	property bool trimExtraZeros: true        //! Whether to remove trailing zeros from decimals.
+	property string prefix                    //! Optional string to display before the value. See notes in the main comments above.
+	property string suffix                    //! Optional string to display after the value. See notes in the main comments above.
 	property int pageSteps: 10                //! How many steps in a "page" step (PAGE UP/DOWN keys or CTRL-Wheel).
 	property int buttonRepeatDelay: 300       //! Milliseconds to delay before held +/- button repeat is activated.
 	property int buttonRepeatInterval: 100    //! +/- button repeat interval while held (in milliseconds).
 
+	readonly property string cleanText: getCleanText(displayText)                            //! Holds the text of the spin box excluding any prefix, suffix, or leading or trailing whitespace.
 	readonly property bool acceptableInput: textInputItem && textInputItem.acceptableInput   //! Indicates if input is valid (it would be nicer if the validator would expose an "isValid" prop/method!).
 	readonly property real topValue: Math.max(from, to)                                      //! The effective maximum value
 	readonly property real botValue: Math.min(from, to)                                      //! The effective minimum value
@@ -83,14 +105,21 @@ Control {
 	//! Use the "native" text editor of the SpinBox to preserve look/feel. If you use a custom SpinBox, you may need to set this property also. If defined, it must have a \e text property.
 	property Item textInputItem: spinBoxItem ? spinBoxItem.contentItem : null
 
-	property QtObject validator: DoubleValidator {
-		id: dblValidator
+	//! Default numeric validator, strictly enforces \p notation type, does not allow for custom \p inputMask with non-numeric components.
+	readonly property QtObject doubleValidator: DoubleValidator {
 		top: control.topValue
 		bottom: control.botValue
 		decimals: Math.max(control.decimals, 0)
 		notation: control.notation
 		locale: control.effectiveLocale.name
 	}
+
+	/* This is an experimental validator using a RegExp instead of numerical validation (which we do anyway).
+		The advantage of using it is that:
+			a) It allows for scientific notation entry even if std. notation is specified (and vice versa) and will then re-format the entry as necessary after editing is finished.
+      b) Could also be used with a custom input mask, as demonstrated in \e tests.qml.
+		To use it, just set \e validator: regExpValidator  */
+	readonly property QtObject regExpValidator: RegExpValidator { regExp: control.doubleValidationRegEx(); }
 
 	// signals
 
@@ -111,7 +140,7 @@ Control {
 		// wrap peroperty is set below as a Binding in case SpinBox vesion is < 2.3 (Qt 5.10).
 	}
 
-	// public function API
+	// Public function API
 
 	function increase() {
 		stepBy(1);
@@ -160,15 +189,10 @@ Control {
 	//! Reimplimented from SpinBox
 	function textFromValue(value, locale)
 	{
-		var text = "0",
-				prec = Math.max(decimals, 0),
-				useStd = (notation === DoubleValidator.StandardNotation);
-
 		if (!locale)
 			locale = effectiveLocale;
 
-		value = Number(value);
-		text = value.toLocaleString(locale, (useStd ? 'f' : 'e'), prec);
+		var text = value.toLocaleString(locale, (notation === DoubleValidator.StandardNotation ? 'f' : 'e'), Math.max(decimals, 0));
 
 		if (!showGroupSeparator && locale.name !== "C")
 			text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
@@ -178,6 +202,11 @@ Control {
 			text = text.replace(new RegExp(re), "$1");
 		}
 
+		if (prefix)
+			text = prefix + text;
+		if (suffix)
+			text = text + suffix;
+
 		return text;
 	}
 
@@ -186,7 +215,8 @@ Control {
 	{
 		if (!locale)
 			locale = effectiveLocale;
-		text = String(text);
+		// strip prefix/suffix, or custom pre-processor
+		text = getCleanText(text, locale);
 		// We need to clean the string before using Number::fromLocaleString because it throws errors when the input format isn't valid, eg. thousands separator in the wrong place. D'oh.
 		var re = "[^\\+\\-\\d\\" + locale.decimalPoint + locale.exponential + "]+";
 		text = text.replace(new RegExp(re, "gi"), "");
@@ -196,12 +226,51 @@ Control {
 		return Number.fromLocaleString(locale, text);
 	}
 
+	//! Return \p text stripped of any \e prefix or \e suffix and trimmed. Same as \e cleanText property.
+	//! Called by \e valueFromText() before other cleanup operations. Could be reimplemented for custom replacements.
+	function getCleanText(text, locale)
+	{
+		text = String(text);
+		if (prefix)
+			text = text.replace(prefixRegEx, "");
+		if (suffix)
+			text = text.replace(suffixRegEx, "");
+		return text.trim();
+	}
+
+	//! Make \p string safe for use in RegExp as a literal.
+	function escapeRegExpChars(string) {
+		return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	}
+
+	//! Make \p string safe for use in Qt input mask as a literal. \sa QLineEdit::inputMask
+	function escapeInputMaskChars(string) {
+		return string.replace(/[{}\[\]\\><!#09anxdhb]/gi, '\\$&');
+	}
+
+	//! Return a RegExp object to validate numeric entry according to the current formatting & locale specs and accounting for any prefix/suffix.
+	function doubleValidationRegEx()
+	{
+		var locale = effectiveLocale,
+				pnt = locale.decimalPoint,
+				grp = locale.groupSeparator,
+				exp = locale.exponential,
+				pfx = escapeRegExpChars(prefix),
+				sfx = escapeRegExpChars(suffix),
+				expRe = "(?:" + exp + "[+-]?[\\d]+)?",
+				re = "^" + pfx + "[+-]?(?:[\\d]{1,3}\\" + grp + "?)+\\" + pnt + "?[\\d]*" + expRe + sfx + "$";
+		// ^[+-]?(?:[\d]{1,3},?)+\.?[\d]*(?:e[+-]?[\d]+)?$
+		return new RegExp(re, "i");
+	}
+
 	// internals
 
 	property bool isValidated: false
 	property bool completed: false
 	readonly property var defaultLocale: Qt.locale("C")
 	readonly property var effectiveLocale: useLocaleFormat ? locale : defaultLocale
+	readonly property var prefixRegEx: new RegExp("^" + escapeRegExpChars(prefix))
+	readonly property var suffixRegEx: new RegExp(escapeRegExpChars(suffix) + "$")
 
 
 	//! Get numeric value from current text
