@@ -58,7 +58,7 @@ Control {
 	property bool editable: true
 	property bool wrap: true
 	property int inputMethodHints: Qt.ImhFormattedNumbersOnly
-	readonly property string displayText: textFromValue(value)
+	readonly property string displayText: textFromValue(value, effectiveLocale)
 	readonly property bool inputMethodComposing: textInputItem ? textInputItem.inputMethodComposing : false
 
 	// Custom properties
@@ -89,7 +89,7 @@ Control {
 		bottom: control.botValue
 		decimals: Math.max(control.decimals, 0)
 		notation: control.notation
-		locale: control.useLocaleFormat ? control.locale.name : "C"
+		locale: control.effectiveLocale.name
 	}
 
 	// signals
@@ -151,7 +151,7 @@ Control {
 				valueModified();
 			if (spinBoxItem)
 				spinBoxItem.value = 0;  // reset this to prevent it from disabling the buttons or other weirdness
-			//console.log(newValue.toFixed(control.decimals));
+			//console.log("setValue:", newValue.toFixed(control.decimals));
 			return true;
 		}
 		return false;
@@ -163,23 +163,17 @@ Control {
 		var text = "0",
 				prec = Math.max(decimals, 0),
 				useStd = (notation === DoubleValidator.StandardNotation);
-		value = Number(value);
 
-		if (useLocaleFormat) {
-			if (!locale)
-				locale = control.locale;
-			text = value.toLocaleString(locale, (useStd ? 'f' : 'e'), prec);
-			if (!showGroupSeparator)
-				text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
-		}
-		else if (useStd) {
-			text = value.toFixed(prec);
-		}
-		else {
-			text = value.toExponential(prec);
-		}
+		if (!locale)
+			locale = effectiveLocale;
+
+		value = Number(value);
+		text = value.toLocaleString(locale, (useStd ? 'f' : 'e'), prec);
+
+		if (!showGroupSeparator && locale.name !== "C")
+			text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
 		if (trimExtraZeros) {
-			var pt = locale ? locale.decimalPoint : ".";
+			var pt = locale.decimalPoint;
 			var re = "\\" + pt + "0*$|(\\" + pt + "\\d*[1-9])(0+)$";
 			text = text.replace(new RegExp(re), "$1");
 		}
@@ -190,45 +184,40 @@ Control {
 	//! Reimplimented from SpinBox
 	function valueFromText(text, locale)
 	{
-		// We don't use Number::fromLocaleString because it throws errors when the input format isn't valid, eg. thousands separator in the wrong place. D'oh.
+		if (!locale)
+			locale = effectiveLocale;
 		text = String(text);
-		if (useLocaleFormat && !locale)
-			locale = control.locale;
-		var re = "[^\\+\\-\\d\\" + (useLocaleFormat ? locale.decimalPoint : ".");
-		if (notation !== DoubleValidator.StandardNotation)
-			re = re + (useLocaleFormat ? locale.exponential : "e");
-		re = re + "]+";
+		// We need to clean the string before using Number::fromLocaleString because it throws errors when the input format isn't valid, eg. thousands separator in the wrong place. D'oh.
+		var re = "[^\\+\\-\\d\\" + locale.decimalPoint + locale.exponential + "]+";
 		text = text.replace(new RegExp(re, "gi"), "");
 		if (!text.length)
 			text = "0";
-		//console.log(text, parseFloat(text).toFixed(control.decimals));
-		return parseFloat(text);
+		//console.log("valueFromText:", text, locale.name, Number.fromLocaleString(locale, text));
+		return Number.fromLocaleString(locale, text);
 	}
 
 	// internals
 
 	property bool isValidated: false
 	property bool completed: false
+	readonly property var defaultLocale: Qt.locale("C")
+	readonly property var effectiveLocale: useLocaleFormat ? locale : defaultLocale
+
 
 	//! Get numeric value from current text
 	function textValue() {
-		return textInputItem ? valueFromText(textInputItem.text, locale) : 0;
-	}
-
-	//! Set the display text directly, ** without updating the numeric \p value property **.
-	function setTextValue(text, locale) {
-		if (textInputItem)
-			textInputItem.text = textFromValue(valueFromText(text, locale), locale);
+		return textInputItem ? valueFromText(textInputItem.text, effectiveLocale) : 0;
 	}
 
 	//! Update the current value and/or formatting of the displayed text. In mnost cases one would use \e setValue() .
 	function updateValueFromText() {
 		var val = textValue();
-		if (!setValue(val, true))
-			setTextValue(val);  // make sure the text is formatted anyway
+		if (!setValue(val, true) && textInputItem)
+			textInputItem.text = textFromValue(val, effectiveLocale);  // make sure the text is formatted anyway
 	}
 
-	function handleKeyEvent(event) {
+	function handleKeyEvent(event)
+	{
 		var steps = 0;
 		if (event.key === Qt.Key_Up)
 			steps = 1;
@@ -264,9 +253,10 @@ Control {
 		btnRepeatTimer.start();
 	}
 
-	function updateUi() {
+	function updateUi()
+	{
 		if (textInputItem)
-			textInputItem.text = textFromValue(value, locale);
+			textInputItem.text = textFromValue(value, effectiveLocale);
 
 		if (!wrap && spinBoxItem) {
 			if (spinBoxItem.up && spinBoxItem.up.indicator)
@@ -297,6 +287,8 @@ Control {
 			updateUi();  // in case it hasn't changed
 	}
 
+	onShowGroupSeparatorChanged: updateUi()
+	onEffectiveLocaleChanged: updateUi()
 	Keys.onPressed: handleKeyEvent(event)
 
 	Connections {
