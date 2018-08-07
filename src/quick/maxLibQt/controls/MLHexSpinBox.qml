@@ -52,14 +52,14 @@ MLDoubleSpinBox {
 	to: 0xFFFFFFFF
 	decimals: 0
 	inputMethodHints: Qt.ImhNoPredictiveText | (upperCase ? Qt.ImhPreferUppercase : 0)
-	inputMask: (showPrefix ? "\\0\\x" : "") + "H".repeat(digits)
+	inputMask: (value < 0 ? "-" : "") + (showPrefix ? "\\0\\x" : "") + "H".repeat(digits)
 
 	validator: RegExpValidator {
-		regExp: new RegExp("(0x)?[0-9A-Fa-f]{1," + control.digits + "}")
+		regExp: new RegExp("-?(0x)?[0-9A-Fa-f]{1," + control.digits + "}")
 	}
 
 	function textFromValue(value, locale) {
-		var ret = Number(value).toString(16);
+		var ret = Math.abs(Number(value)).toString(16);
 		if (zeroPad && digits > ret.length)
 			ret = "0".repeat(digits - ret.length) + ret;
 		if (upperCase)
