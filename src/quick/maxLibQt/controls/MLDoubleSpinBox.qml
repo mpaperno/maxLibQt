@@ -255,14 +255,17 @@ Control {
 
 	function updateUi()
 	{
+		if (!completed)
+			return;
+
 		if (textInputItem)
 			textInputItem.text = textFromValue(value, effectiveLocale);
 
-		if (!wrap && spinBoxItem) {
+		if (spinBoxItem) {
 			if (spinBoxItem.up && spinBoxItem.up.indicator)
-				spinBoxItem.up.indicator.enabled = value < topValue;
+				spinBoxItem.up.indicator.enabled = (wrap || value < topValue);
 			if (spinBoxItem.down && spinBoxItem.down.indicator)
-				spinBoxItem.down.indicator.enabled = value > botValue;
+				spinBoxItem.down.indicator.enabled = (wrap || value > botValue);
 		}
 	}
 
@@ -287,6 +290,9 @@ Control {
 			updateUi();  // in case it hasn't changed
 	}
 
+	onWrapChanged: updateUi()
+	onNotationChanged: updateUi()
+	onTrimExtraZerosChanged: updateUi()
 	onShowGroupSeparatorChanged: updateUi()
 	onEffectiveLocaleChanged: updateUi()
 	Keys.onPressed: handleKeyEvent(event)
