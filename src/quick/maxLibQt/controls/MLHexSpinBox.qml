@@ -43,10 +43,10 @@ MLDoubleSpinBox {
 	id: control
 	objectName: "MLHexSpinBox"
 
-	property bool upperCase: true     //! Whether to force upper-case formatting for letters.
-	property bool zeroPad: true       //! Whether to pad numbers with leading zeros up to \p digits length.
-	property bool showPrefix: true    //! Whether to show the "0x" prefix.
-	property int digits: Math.abs(topValue).toString(16).length   //! Number of digits expected, used in validator, input mask, and for zero-padding. Default is based on maximum value.
+	property bool upperCase: true     //!< Whether to force upper-case formatting for letters.
+	property bool zeroPad: true       //!< Whether to pad numbers with leading zeros up to \p digits length.
+	property bool showPrefix: true    //!< Whether to show the "0x" prefix.
+	property int digits: Math.abs(topValue).toString(16).length   //!< Number of digits expected, used in validator, input mask, and for zero-padding. Default is based on maximum value.
 
 	from: 0
 	to: 0xFFFFFFFF

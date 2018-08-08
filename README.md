@@ -24,13 +24,13 @@ Project home: https://github.com/mpaperno/maxLibQt
 ## QML Components:
 
 * Controls
-  * `MLDoubleSpinBox` - A SpinBox control which handles float/double number types to the desired precision, as well as large integers (within ECMAScript limits). Avoids the `int` size type limitation of the current QtQuick Controls (v2.0 - 2.4) SpinBox but still using the current theme styling (Fusion/Material/etc).
-  * `MLHexSpinBox` - A SpinBox control which allows editing integers in hexadeciaml format. Allows a wide range of numbers, including unsigned integers. Based on `MLDoubleSpinBox`.
+  * [`MLDoubleSpinBox`](maxLibQt::controls::MLDoubleSpinBox) - A SpinBox control which handles float/double number types to the desired precision, as well as large integers (within ECMAScript limits). Avoids the `int` size type limitation of the current QtQuick Controls (v2.0 - 2.4) SpinBox but still using the current theme styling (Fusion/Material/etc).
+  * [`MLHexSpinBox`](maxLibQt::controls::MLHexSpinBox) - A SpinBox control which allows editing integers in hexadeciaml format. Allows a wide range of numbers, including unsigned integers. Based on `MLDoubleSpinBox`.
 
 ### Documentation:
 
 Some Doxygen-style documentation is embedded in the code and can be generated as either part of the CMake build or manually with the
-included Doxyfile (run `doxygen doc/Doxyfile` in root of this project).  Some of the source code is further documented inline (but never enough).  (Doxygen currently not working for QML code docs, read those in the source.)
+included Doxyfile (run `doxygen doc/Doxyfile` in root of this project). To generate docs for *QML code* you'd need to use install [doxyqml](https://github.com/agateau/doxyqml) (the Doxyfile is already configured to use it if you have it). Some of the source code is further documented inline (but never enough).
 
 This documentation is also published at https://mpaperno.github.io/maxLibQt/
 
