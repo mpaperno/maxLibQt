@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wheelevent',['wheelEvent',['../class_timer_edit.html#a1e7ba712beee5fae683c6110c57cdff0',1,'TimerEdit::wheelEvent()'],['../class_tree_combo_box.html#aa36918e1f15d892b0ccf60622f19050f',1,'TreeComboBox::wheelEvent()']]]
+  ['updateui',['updateUi',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a6220a2dc1535da4d81364f7ca9d1c7bf',1,'maxLibQt::controls::MLDoubleSpinBox']]],
+  ['updatevaluefromtext',['updateValueFromText',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a551f385b754e761ef7a9f131538a0b3f',1,'maxLibQt::controls::MLDoubleSpinBox']]],
+  ['usepopup',['usePopup',['../class_tree_combo_box.html#a1b1723dbeb0b7201084eb6d1d0a21da2',1,'TreeComboBox']]]
 ];

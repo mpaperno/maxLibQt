@@ -1,6 +1,9 @@
 var searchData=
 [
   ['g_5fappdebugmessagehandler',['g_appDebugMessageHandler',['../_app_debug_message_handler_8cpp.html#a1f22e31f07241d939971f557a9c83029',1,'g_appDebugMessageHandler(QtMsgType type, const QMessageLogContext &amp;context, const QString &amp;msg):&#160;AppDebugMessageHandler.cpp'],['../_app_debug_message_handler_8h.html#ad1fc7f050461463ec4eb900a96c72332',1,'g_appDebugMessageHandler(QtMsgType, const QMessageLogContext &amp;, const QString &amp;):&#160;AppDebugMessageHandler.cpp']]],
+  ['get',['get',['../class_abstract_item_table_model.html#a87e734ba6c54ba171a14c832eb0cd215',1,'AbstractItemTableModel::get()'],['../class_grouped_items_proxy_model.html#acb4ed7f4b31f672f406628889322a11c',1,'GroupedItemsProxyModel::get(int idx) const'],['../class_grouped_items_proxy_model.html#a78ba7737af16f2ee32bc3fb2593108dd',1,'GroupedItemsProxyModel::get(const QString &amp;uid) const']]],
+  ['getcleantext',['getCleanText',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a84d4295524497c5852c20aa94f0d0c78',1,'maxLibQt::controls::MLDoubleSpinBox']]],
+  ['getdefaulthtmlstyle',['getDefaultHtmlStyle',['../class_exportable_table_view.html#a80b789ab7407adbf4d731bbc89524fce',1,'ExportableTableView']]],
   ['getdefaulthtmltemplate',['getDefaultHtmlTemplate',['../class_exportable_table_view.html#ac529b1c50f14235da1211e9b82e0fede',1,'ExportableTableView']]],
   ['getselectedorall',['getSelectedOrAll',['../class_exportable_table_view.html#afd911c70de7c41e7d162742503b4fa4c',1,'ExportableTableView']]],
   ['groupcolumnisproxy',['groupColumnIsProxy',['../class_grouped_items_proxy_model.html#af40e5ed43a940a025cb80c4e8e95bd07',1,'GroupedItemsProxyModel']]],

@@ -1,5 +1,10 @@
 var searchData=
 [
+  ['abstractitemtablemodel',['AbstractItemTableModel',['../class_abstract_item_table_model.html',1,'AbstractItemTableModel'],['../class_abstract_item_table_model.html#a72495b5428879b1b5852cf13ec9d754f',1,'AbstractItemTableModel::AbstractItemTableModel(QObject *parent=Q_NULLPTR)'],['../class_abstract_item_table_model.html#a0ea6eea9500557994436dd1f82a94ae0',1,'AbstractItemTableModel::AbstractItemTableModel(QVector&lt; const AbstractNamedItem *&gt; items, QObject *parent=Q_NULLPTR)']]],
+  ['abstractnameditem',['AbstractNamedItem',['../class_abstract_named_item.html',1,'AbstractNamedItem'],['../class_abstract_named_item.html#a59b99b425f3ca820c974e936aa1a2ab4',1,'AbstractNamedItem::AbstractNamedItem()']]],
+  ['abstractnameditem_2ecpp',['AbstractNamedItem.cpp',['../_abstract_named_item_8cpp.html',1,'']]],
+  ['abstractnameditem_2eh',['AbstractNamedItem.h',['../_abstract_named_item_8h.html',1,'']]],
+  ['acceptableinput',['acceptableInput',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a9aef36054e6093947f0f7f347b3496d6',1,'maxLibQt::controls::MLDoubleSpinBox']]],
   ['addchild',['addChild',['../class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#ab678b3cb2b351072846b69af5d133ddb',1,'GroupedItemsProxyModel::GroupedProxyItem']]],
   ['addgroup',['addGroup',['../class_grouped_items_proxy_model.html#a38d322c304e2f9bbe9b2fb882f1113a7',1,'GroupedItemsProxyModel']]],
   ['addgroups',['addGroups',['../class_grouped_items_proxy_model.html#acfbe6df1610132548987d56cc44b8a78',1,'GroupedItemsProxyModel']]],
@@ -9,13 +14,14 @@ var searchData=
   ['addparentitem',['addParentItem',['../class_tree_combo_box.html#a85007d5008ce52c17a9f460a103a5249',1,'TreeComboBox::addParentItem(const QString &amp;text, const bool selectable=false, const QModelIndex &amp;parentIndex=QModelIndex(), const QVariant &amp;userData=QVariant())'],['../class_tree_combo_box.html#aa14e7537d6f8ea06d5bf70d86fa7ff99',1,'TreeComboBox::addParentItem(const QIcon &amp;icon, const QString &amp;text, const bool selectable=false, const QModelIndex &amp;parentIndex=QModelIndex(), const QVariant &amp;userData=QVariant())']]],
   ['adjustpopupheight',['adjustPopupHeight',['../class_tree_combo_box.html#a9fc4990c686bfdfba9725c613ab9eaee',1,'TreeComboBox']]],
   ['adjustpopupwidth',['adjustPopupWidth',['../class_tree_combo_box.html#a2af6e2e95935a7882db5b3b24182f6d7',1,'TreeComboBox']]],
+  ['adjustwidth',['adjustWidth',['../class_tree_combo_box_view.html#a0e4cae2120167e60d3da0f637aaec427',1,'TreeComboBoxView']]],
   ['app_5fdbg_5fhandler_5fdefault_5flevel',['APP_DBG_HANDLER_DEFAULT_LEVEL',['../_app_debug_message_handler_8h.html#a0930f4608fc13b736110445277e8f962',1,'AppDebugMessageHandler.h']]],
   ['app_5fdbg_5fhandler_5fenable',['APP_DBG_HANDLER_ENABLE',['../_app_debug_message_handler_8h.html#ade50edf4a872fcadf7279019d2d73910',1,'AppDebugMessageHandler.h']]],
   ['app_5fdbg_5fhandler_5fis_5fdbg_5fbuild',['APP_DBG_HANDLER_IS_DBG_BUILD',['../_app_debug_message_handler_8h.html#a6255cd2fbe4dcc823036eef7d796de61',1,'AppDebugMessageHandler.h']]],
   ['app_5fdbg_5fhandler_5fshow_5ffunction_5fdecl',['APP_DBG_HANDLER_SHOW_FUNCTION_DECL',['../_app_debug_message_handler_8h.html#adc8faffe6c9746c401752f606d1a3c6d',1,'AppDebugMessageHandler.h']]],
   ['app_5fdbg_5fhandler_5fshow_5fsrc_5fpath',['APP_DBG_HANDLER_SHOW_SRC_PATH',['../_app_debug_message_handler_8h.html#abfd22c72171ab64a35243e3be131a54b',1,'AppDebugMessageHandler.h']]],
   ['app_5fdbg_5fhandler_5fsrc_5fpath',['APP_DBG_HANDLER_SRC_PATH',['../_app_debug_message_handler_8h.html#a90c9d6ec1e7d971e41b4fd2e4778327a',1,'AppDebugMessageHandler.h']]],
-  ['appdebugmessagehandler',['AppDebugMessageHandler',['../class_app_debug_message_handler.html',1,'AppDebugMessageHandler'],['../class_app_debug_message_handler.html#a7f2f4cffa4d23be798c356d3802adb0f',1,'AppDebugMessageHandler::AppDebugMessageHandler()']]],
+  ['appdebugmessagehandler',['AppDebugMessageHandler',['../class_app_debug_message_handler.html',1,'AppDebugMessageHandler'],['../class_app_debug_message_handler.html#a107c775d4bfbc218735ba4f22d28ac2b',1,'AppDebugMessageHandler::AppDebugMessageHandler(QObject *parent=Q_NULLPTR)'],['../class_app_debug_message_handler.html#a7f2f4cffa4d23be798c356d3802adb0f',1,'AppDebugMessageHandler::AppDebugMessageHandler(AppDebugMessageHandler const &amp;)=delete']]],
   ['appdebugmessagehandler_2ecpp',['AppDebugMessageHandler.cpp',['../_app_debug_message_handler_8cpp.html',1,'']]],
   ['appdebugmessagehandler_2eh',['AppDebugMessageHandler.h',['../_app_debug_message_handler_8h.html',1,'']]],
   ['autodata',['autoData',['../class_tree_combo_box.html#a02239fe1ff6aac5b0d839a2e2a18e350',1,'TreeComboBox::autoData()'],['../class_tree_combo_box.html#a87f42fa214850a6e8ba1c9e672419a98',1,'TreeComboBox::autoData() const']]]

@@ -1,5 +1,7 @@
 var class_app_debug_message_handler =
 [
+    [ "AppDebugMessageHandler", "class_app_debug_message_handler.html#a107c775d4bfbc218735ba4f22d28ac2b", null ],
+    [ "~AppDebugMessageHandler", "class_app_debug_message_handler.html#a014f6f149e84c7c8adc1ae9ef7e5c23e", null ],
     [ "AppDebugMessageHandler", "class_app_debug_message_handler.html#a7f2f4cffa4d23be798c356d3802adb0f", null ],
     [ "addOutputDevice", "class_app_debug_message_handler.html#a94884c1f9a9cdc39b07e894bf493979c", null ],
     [ "installAppMessageHandler", "class_app_debug_message_handler.html#af1a4ec1c9bb64a83176644e8687f42d9", null ],

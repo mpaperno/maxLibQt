@@ -15,6 +15,7 @@ var dir_0abdee562046be6f5823d1ca8c3fd13c =
     [ "TreeComboBox.cpp", "_tree_combo_box_8cpp.html", null ],
     [ "TreeComboBox.h", "_tree_combo_box_8h.html", [
       [ "TreeComboItemDelegate", "class_tree_combo_item_delegate.html", "class_tree_combo_item_delegate" ],
-      [ "TreeComboBox", "class_tree_combo_box.html", "class_tree_combo_box" ]
+      [ "TreeComboBox", "class_tree_combo_box.html", "class_tree_combo_box" ],
+      [ "TreeComboBoxView", "class_tree_combo_box_view.html", "class_tree_combo_box_view" ]
     ] ]
 ];

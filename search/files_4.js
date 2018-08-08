@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
+  ['mldoublespinbox_2eqml',['MLDoubleSpinBox.qml',['../_m_l_double_spin_box_8qml.html',1,'']]],
+  ['mlhexspinbox_2eqml',['MLHexSpinBox.qml',['../_m_l_hex_spin_box_8qml.html',1,'']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['oncustomcontextmenurequested',['onCustomContextMenuRequested',['../class_exportable_table_view.html#aeb790e4ef3753aab6b8c0ec38193353f',1,'ExportableTableView']]],
-  ['operator_3d',['operator=',['../class_app_debug_message_handler.html#a4a96d7683876e3d964fd605ed76b13e5',1,'AppDebugMessageHandler']]]
+  ['name',['name',['../class_abstract_named_item.html#a88c0a3c57e6d4b8022810aa59edb362d',1,'AbstractNamedItem::name()'],['../class_abstract_named_item.html#a258e67665c50eb4e48d9ee16c8e039d6',1,'AbstractNamedItem::name() const']]],
+  ['namecolumn',['NameColumn',['../class_abstract_named_item.html#a214a6390614898565f12c8d40f1a6fc0a77d28524b1630b9a34cb382152b11962',1,'AbstractNamedItem']]],
+  ['notation',['notation',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a780f82d9b03b80ba42a38e93a1b32743',1,'maxLibQt::controls::MLDoubleSpinBox']]]
 ];

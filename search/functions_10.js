@@ -1,14 +1,16 @@
 var searchData=
 [
-  ['textedit',['textEdit',['../class_scrollable_message_box.html#a69bdd10da1eba22630b69dafc2766ef5',1,'ScrollableMessageBox']]],
-  ['texteditedhandler',['textEditedHandler',['../class_timer_edit.html#ae6786bfb882e8a0c76a0c03e1e77a473',1,'TimerEdit']]],
-  ['textlabel',['textLabel',['../class_scrollable_message_box.html#a13c471fb31785731881ee943f5cc337b',1,'ScrollableMessageBox']]],
-  ['timeinseconds',['timeInSeconds',['../class_timer_edit.html#afd4ac5c82797ae206ccd7072bbca2e44',1,'TimerEdit']]],
-  ['timepart',['timepart',['../class_timer_edit.html#a389ebd8f6097b2fdd45c529c36c721d3',1,'TimerEdit']]],
-  ['timeredit',['TimerEdit',['../class_timer_edit.html#ab49e99e0b58102a933875105914da4e9',1,'TimerEdit']]],
-  ['tohtml',['toHtml',['../class_exportable_table_view.html#aa0fba058468645449355abd56f490597',1,'ExportableTableView']]],
-  ['toplaintext',['toPlainText',['../class_exportable_table_view.html#abcc710c379d0eabeadf5346fec92df4f',1,'ExportableTableView']]],
-  ['totalrowcount',['totalRowCount',['../class_grouped_items_proxy_model.html#aa62cc1e00329458dd2931623e1f060c3',1,'GroupedItemsProxyModel']]],
-  ['treecombobox',['TreeComboBox',['../class_tree_combo_box.html#ab58bd6792a8f6d1ed4ffa5ef09804d28',1,'TreeComboBox']]],
-  ['treecomboitemdelegate',['TreeComboItemDelegate',['../class_tree_combo_item_delegate.html#aba6334b964aba732ca49be2a9d7f1157',1,'TreeComboItemDelegate']]]
+  ['reloadmodel',['reloadModel',['../class_tree_combo_box.html#ab60fb29a6e56b7029658c4f910da07a3',1,'TreeComboBox']]],
+  ['reloadsourcemodel',['reloadSourceModel',['../class_grouped_items_proxy_model.html#a285c59a9846012c8a896d0d286c7f785',1,'GroupedItemsProxyModel']]],
+  ['removechild',['removeChild',['../class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#af7dc03fc1afdba9818f56d11fdb3a3f9',1,'GroupedItemsProxyModel::GroupedProxyItem::removeChild(GroupedProxyItem *item)'],['../class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a76a72172d8fad21591933a930405db2d',1,'GroupedItemsProxyModel::GroupedProxyItem::removeChild(const int row)']]],
+  ['removegroup',['removeGroup',['../class_grouped_items_proxy_model.html#a96ec253d7ecf5278bd264799f3e3ff4b',1,'GroupedItemsProxyModel']]],
+  ['removeitem',['removeItem',['../class_grouped_items_proxy_model.html#a50dd22ff1bd44dacde47d74b9fa921bd',1,'GroupedItemsProxyModel']]],
+  ['removeoutputdevice',['removeOutputDevice',['../class_app_debug_message_handler.html#a300fee805fe69e728c2a5c0aa41d4313',1,'AppDebugMessageHandler']]],
+  ['removeunusedgroups',['removeUnusedGroups',['../class_grouped_items_proxy_model.html#aca59d9fef5d4de9100f3240bc5f075fa',1,'GroupedItemsProxyModel']]],
+  ['rolenames',['roleNames',['../class_abstract_item_table_model.html#ab017d9d296c06e485061a67314f7c0df',1,'AbstractItemTableModel::roleNames()'],['../class_grouped_items_proxy_model.html#a95cb41edc8cbefbd47eb0e1a0b1ca52f',1,'GroupedItemsProxyModel::roleNames()']]],
+  ['row',['row',['../class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a0b98c80b0c5806413878a9022720f92c',1,'GroupedItemsProxyModel::GroupedProxyItem']]],
+  ['rowcount',['rowCount',['../class_abstract_item_table_model.html#a811dffdfa6bfdd5819bdc0a30110e399',1,'AbstractItemTableModel::rowCount()'],['../class_grouped_items_proxy_model.html#a4d54df3db5b60b143ea6945f67d2581f',1,'GroupedItemsProxyModel::rowCount()'],['../class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#ac8338da456b068dd5aec001e167cf347',1,'GroupedItemsProxyModel::GroupedProxyItem::rowCount()']]],
+  ['rowsinsertedhandler',['rowsInsertedHandler',['../class_grouped_items_proxy_model.html#ac9c6da819da8faeee134b3e2444679a8',1,'GroupedItemsProxyModel']]],
+  ['rowsmovedhandler',['rowsMovedHandler',['../class_grouped_items_proxy_model.html#a51774f178da2e9f6a884df9425a7c94b',1,'GroupedItemsProxyModel']]],
+  ['rowsremovedhandler',['rowsRemovedHandler',['../class_grouped_items_proxy_model.html#a08095dec224cb296a65e1f2677188595',1,'GroupedItemsProxyModel']]]
 ];
