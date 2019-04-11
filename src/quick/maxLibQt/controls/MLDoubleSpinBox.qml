@@ -279,26 +279,27 @@ Control {
 
 	// internals
 
-	property bool isValidated: false
-	property bool completed: false
-	readonly property var defaultLocale: Qt.locale("C")
-	readonly property var effectiveLocale: useLocaleFormat ? locale : defaultLocale
-	readonly property var prefixRegEx: new RegExp("^" + escapeRegExpChars(prefix))
-	readonly property var suffixRegEx: new RegExp(escapeRegExpChars(suffix) + "$")
+	property bool isValidated: false  //!< \private
+	property bool completed: false    //!< \private
+	readonly property var defaultLocale: Qt.locale("C")  //!< \private
+	readonly property var effectiveLocale: useLocaleFormat ? locale : defaultLocale  //!< \private
+	readonly property var prefixRegEx: new RegExp("^" + escapeRegExpChars(prefix))  //!< \private
+	readonly property var suffixRegEx: new RegExp(escapeRegExpChars(suffix) + "$")  //!< \private
 
 
-	//! \internal Get numeric value from current text
+	//! \private Get numeric value from current text
 	function textValue() {
 		return textInputItem ? valueFromText(textInputItem.text, effectiveLocale) : 0;
 	}
 
-	//! \internal Update the current value and/or formatting of the displayed text. In mnost cases one would use \e setValue() .
+	//! \private Update the current value and/or formatting of the displayed text. In mnost cases one would use \e setValue() .
 	function updateValueFromText() {
 		var val = textValue();
 		if (!setValue(val, true) && textInputItem)
 			textInputItem.text = textFromValue(val, effectiveLocale);  // make sure the text is formatted anyway
 	}
 
+	//! \private
 	function handleKeyEvent(event)
 	{
 		var steps = 0;
@@ -321,6 +322,7 @@ Control {
 			updateValueFromText();
 	}
 
+	//! \private
 	function toggleButtonPress(press, increment)
 	{
 		if (!press) {
@@ -336,6 +338,7 @@ Control {
 		btnRepeatTimer.start();
 	}
 
+	//! \private
 	function updateUi()
 	{
 		if (!completed)
