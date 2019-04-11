@@ -211,8 +211,9 @@ Control {
 			text = text.replace(new RegExp("\\" + locale.groupSeparator, "g"), "");
 		if (trimExtraZeros) {
 			var pt = locale.decimalPoint;
-			var re = "\\" + pt + "0*$|(\\" + pt + "\\d*[1-9])(0+)$";
-			text = text.replace(new RegExp(re), "$1");
+			var ex = new RegExp("\\" + pt + "0*$|(\\" + pt + "\\d*[1-9])(0+)$").exec(text);
+			if (ex)
+				text = text.replace(ex[0], ex[1] || "");
 		}
 
 		if (prefix)
