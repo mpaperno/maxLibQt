@@ -294,9 +294,8 @@ Control {
 
 	//! \private Update the current value and/or formatting of the displayed text. In mnost cases one would use \e setValue() .
 	function updateValueFromText() {
-		var val = textValue();
-		if (!setValue(val, true) && textInputItem)
-			textInputItem.text = textFromValue(val, effectiveLocale);  // make sure the text is formatted anyway
+		if (!setValue(textValue(), true))
+			updateUi();  // make sure the text is formatted anyway
 	}
 
 	//! \private
