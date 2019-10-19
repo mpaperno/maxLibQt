@@ -8,6 +8,7 @@ HEADERS += \
   $$PWD/BuddyLabel.h \
   $$PWD/CollapsingToolBar.h \
   $$PWD/ExportableTableView.h \
+  $$PWD/RoundedMessageBox.h \
   $$PWD/ScrollableMessageBox.h \
   $$PWD/TimerEdit.h \
   $$PWD/TreeComboBox.h
