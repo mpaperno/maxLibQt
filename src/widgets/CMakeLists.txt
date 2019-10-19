@@ -11,6 +11,7 @@ find_package(Qt5Widgets)
 project(maxLibQtWidgets)
 
 set(SRCS
+	"${CMAKE_CURRENT_LIST_DIR}/ActionPushButton.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/ExportableTableView.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/ScrollableMessageBox.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/TimerEdit.cpp"
@@ -18,7 +19,11 @@ set(SRCS
 )
 
 set(HDRS
+  "${CMAKE_CURRENT_LIST_DIR}/ActionPushButton.h"
+  "${CMAKE_CURRENT_LIST_DIR}/BuddyLabel.h"
+  "${CMAKE_CURRENT_LIST_DIR}/CollapsingToolBar.h"
 	"${CMAKE_CURRENT_LIST_DIR}/ExportableTableView.h"
+	"${CMAKE_CURRENT_LIST_DIR}/RoundedMessageBox.h"
 	"${CMAKE_CURRENT_LIST_DIR}/ScrollableMessageBox.h"
 	"${CMAKE_CURRENT_LIST_DIR}/TimerEdit.h"
 	"${CMAKE_CURRENT_LIST_DIR}/TreeComboBox.h"
