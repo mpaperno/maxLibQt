@@ -113,8 +113,8 @@ class RoundedMessageBox : public QMessageBox
 			setAttribute(Qt::WA_TranslucentBackground);
 		}
 
-		qreal radius = 0.0;        // desired radius in absolute pixels
-		qreal borderWidth = -1.0;  // -1 : use style hint frame width;  0 : no border;  > 0 : use this width.
+		qreal radius = 0.0;        //!< desired radius in absolute pixels
+		qreal borderWidth = -1.0;  //!< -1 = use style hint frame width;  0 = no border;  > 0 = use this width.
 
 	protected:
 		void paintEvent(QPaintEvent *) override
@@ -158,7 +158,7 @@ class RoundedMessageBox : public QMessageBox
 			// Set the brush from palette role.
 			p.setBrush(palette().brush(backgroundRole()));
 			// Got radius?  Otherwise draw a quicker rect.
-			if (radius >= 0.0)
+			if (radius > 0.0)
 				p.drawRoundedRect(rect, radius, radius, Qt::AbsoluteSize);
 			else
 				p.drawRect(rect);
