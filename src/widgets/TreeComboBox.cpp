@@ -223,7 +223,7 @@ QModelIndex TreeComboBox::insertItem(int index, const QIcon &icon, const QString
 
 void TreeComboBox::insertItems(int index, const QStringList &texts, const QModelIndex &parentIndex)
 {
-	foreach(QString text, texts)
+	for (const QString &text : texts)
 		insertItem(index++, QIcon(), text, parentIndex, QVariant(), (text == texts.last()));
 }
 
