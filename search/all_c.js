@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['name',['name',['../class_abstract_named_item.html#a88c0a3c57e6d4b8022810aa59edb362d',1,'AbstractNamedItem::name()'],['../class_abstract_named_item.html#a258e67665c50eb4e48d9ee16c8e039d6',1,'AbstractNamedItem::name() const']]],
-  ['namecolumn',['NameColumn',['../class_abstract_named_item.html#a214a6390614898565f12c8d40f1a6fc0a77d28524b1630b9a34cb382152b11962',1,'AbstractNamedItem']]],
+  ['nextcheckstate',['nextCheckState',['../class_action_push_button.html#ab3f9b57836bf8071299b2bef4d2704d9',1,'ActionPushButton']]],
   ['notation',['notation',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a780f82d9b03b80ba42a38e93a1b32743',1,'maxLibQt::controls::MLDoubleSpinBox']]]
 ];

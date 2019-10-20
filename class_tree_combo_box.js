@@ -1,6 +1,7 @@
 var class_tree_combo_box =
 [
     [ "TreeComboBox", "class_tree_combo_box.html#ab58bd6792a8f6d1ed4ffa5ef09804d28", null ],
+    [ "autoData", "class_tree_combo_box.html#a02239fe1ff6aac5b0d839a2e2a18e350", null ],
     [ "addItem", "class_tree_combo_box.html#a202be77eb8281e54cfaad04879541be4", null ],
     [ "addItem", "class_tree_combo_box.html#ac3d412d8e7cee7c52682dccac195e993", null ],
     [ "addItem", "class_tree_combo_box.html#a2c5b56cf6df06325106eca2c9836f331", null ],
@@ -60,6 +61,5 @@ var class_tree_combo_box =
     [ "m_nextDataId", "class_tree_combo_box.html#a612ade875c1d660dc212d7d7344afc05", null ],
     [ "m_rowMap", "class_tree_combo_box.html#a8f0658b83690f786ba040c768fa6575c", null ],
     [ "m_skipNextHide", "class_tree_combo_box.html#ada379445b602e8ccd8c3e47ddc07f91e", null ],
-    [ "m_view", "class_tree_combo_box.html#af4603295ffe43fe4356af44da68ab77a", null ],
-    [ "autoData", "class_tree_combo_box.html#a02239fe1ff6aac5b0d839a2e2a18e350", null ]
+    [ "m_view", "class_tree_combo_box.html#af4603295ffe43fe4356af44da68ab77a", null ]
 ];

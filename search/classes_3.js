@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mldoublespinbox',['MLDoubleSpinBox',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html',1,'maxLibQt::controls']]],
-  ['mlhexspinbox',['MLHexSpinBox',['../classmax_lib_qt_1_1controls_1_1_m_l_hex_spin_box.html',1,'maxLibQt::controls']]]
+  ['exportabletableview',['ExportableTableView',['../class_exportable_table_view.html',1,'']]]
 ];

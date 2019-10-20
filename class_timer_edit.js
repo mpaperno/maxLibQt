@@ -8,6 +8,11 @@ var class_timer_edit =
       [ "Seconds", "class_timer_edit.html#af357d9d8494ad66a18d5599357eb89dea48bfd6c0c7b449b82799ea6482575ed0", null ]
     ] ],
     [ "TimerEdit", "class_timer_edit.html#ab49e99e0b58102a933875105914da4e9", null ],
+    [ "maximumTime", "class_timer_edit.html#a28e2a84f4113b729f395a9db52ce84f2", null ],
+    [ "minimumTime", "class_timer_edit.html#ab4d8a3aacda5f81dc46ba16c2cd0a02f", null ],
+    [ "pageStep", "class_timer_edit.html#a969d9803b8259fd6d02acc9bcb92ffef", null ],
+    [ "showSeconds", "class_timer_edit.html#a8da2c3a646d7fd497169a118e9e2edfb", null ],
+    [ "singleStep", "class_timer_edit.html#a5883936f3869320eabd15746eb776350", null ],
     [ "emitValueChanged", "class_timer_edit.html#a05c9f0a249215491b6e0b14b1ceb600d", null ],
     [ "incrDecr", "class_timer_edit.html#a53e315db9804aacd641a4a99f522371f", null ],
     [ "keyPressEvent", "class_timer_edit.html#acc876dc1d719a2acde95ca3f93107d1b", null ],
@@ -34,10 +39,5 @@ var class_timer_edit =
     [ "m_pageStep", "class_timer_edit.html#a5cd70c6ee9833d075043f01634461558", null ],
     [ "m_showSeconds", "class_timer_edit.html#a51cce59198a264500f509ea8e6eefddd", null ],
     [ "m_singleStep", "class_timer_edit.html#a8f36cac4aac860049130a65507add611", null ],
-    [ "m_validator", "class_timer_edit.html#ac106d7c8209d1bd2134649b88688fd96", null ],
-    [ "maximumTime", "class_timer_edit.html#a28e2a84f4113b729f395a9db52ce84f2", null ],
-    [ "minimumTime", "class_timer_edit.html#ab4d8a3aacda5f81dc46ba16c2cd0a02f", null ],
-    [ "pageStep", "class_timer_edit.html#a969d9803b8259fd6d02acc9bcb92ffef", null ],
-    [ "showSeconds", "class_timer_edit.html#a8da2c3a646d7fd497169a118e9e2edfb", null ],
-    [ "singleStep", "class_timer_edit.html#a5883936f3869320eabd15746eb776350", null ]
+    [ "m_validator", "class_timer_edit.html#ac106d7c8209d1bd2134649b88688fd96", null ]
 ];

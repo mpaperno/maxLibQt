@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['updateui',['updateUi',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a6220a2dc1535da4d81364f7ca9d1c7bf',1,'maxLibQt::controls::MLDoubleSpinBox']]],
-  ['updatevaluefromtext',['updateValueFromText',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a551f385b754e761ef7a9f131538a0b3f',1,'maxLibQt::controls::MLDoubleSpinBox']]],
-  ['uppercase',['upperCase',['../classmax_lib_qt_1_1controls_1_1_m_l_hex_spin_box.html#a1ac773062f51caba860b9546a45380fc',1,'maxLibQt::controls::MLHexSpinBox']]],
-  ['uselocaleformat',['useLocaleFormat',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a43e47cccf50e2a9e49822f6cfdfd6ee1',1,'maxLibQt::controls::MLDoubleSpinBox']]],
-  ['usepopup',['usePopup',['../class_tree_combo_box.html#a1b1723dbeb0b7201084eb6d1d0a21da2',1,'TreeComboBox']]]
+  ['validator',['validator',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a008b13f40c51530aa38403feb405346e',1,'maxLibQt::controls::MLDoubleSpinBox']]],
+  ['value',['value',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a2fca31028a9830ee0064c8a067a4d160',1,'maxLibQt::controls::MLDoubleSpinBox']]],
+  ['valuefromtext',['valueFromText',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#ac42aa36b8205e514e37dee83279f7b68',1,'maxLibQt::controls::MLDoubleSpinBox::valueFromText()'],['../classmax_lib_qt_1_1controls_1_1_m_l_hex_spin_box.html#acb3a280940e030c4e72b8eb5e9f6edc4',1,'maxLibQt::controls::MLHexSpinBox::valueFromText()']]],
+  ['valuemodified',['valueModified',['../classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#ada1d518c46a009436fd617c748d8004d',1,'maxLibQt::controls::MLDoubleSpinBox']]],
+  ['view',['view',['../class_tree_combo_box.html#a3c55df916a558d3968dacea3786e0051',1,'TreeComboBox']]]
 ];

@@ -24,9 +24,9 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "maxLibQt", "index.html", [
-    [ "maxLibQt - C++ and QML code library for the *Qt*™ framework.", "index.html", null ],
-    [ "LICENSE.GPL.txt", "_l_i_c_e_n_s_e_8_g_p_l_8txt.html", null ],
+    [ "maxLibQt - C++ and QML code library for the <em>Qt</em>™ framework.", "index.html", null ],
     [ "LICENSE.txt", "_l_i_c_e_n_s_e_8txt.html", null ],
+    [ "LICENSE.GPL.txt", "_l_i_c_e_n_s_e_8_g_p_l_8txt.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -38,7 +38,6 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ],
         [ "Properties", "functions_prop.html", null ],
@@ -49,8 +48,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Functions", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]
@@ -58,9 +56,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_abstract_named_item_8cpp.html",
-"class_scrollable_message_box.html#aadf4f2a91328c5bfc21521d36b3170b2",
-"namespacemax_lib_qt_1_1controls.html"
+"_action_push_button_8cpp.html",
+"class_timer_edit.html#a4d6dd433e695baa6485a4475c12f07a7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

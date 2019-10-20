@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mldoublespinbox_2eqml',['MLDoubleSpinBox.qml',['../_m_l_double_spin_box_8qml.html',1,'']]],
-  ['mlhexspinbox_2eqml',['MLHexSpinBox.qml',['../_m_l_hex_spin_box_8qml.html',1,'']]]
+  ['groupeditemsproxymodel_2ecpp',['GroupedItemsProxyModel.cpp',['../_grouped_items_proxy_model_8cpp.html',1,'']]],
+  ['groupeditemsproxymodel_2eh',['GroupedItemsProxyModel.h',['../_grouped_items_proxy_model_8h.html',1,'']]]
 ];

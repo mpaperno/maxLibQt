@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exportabletableview',['ExportableTableView',['../class_exportable_table_view.html',1,'']]]
+  ['buddylabel',['BuddyLabel',['../class_buddy_label.html',1,'']]]
 ];

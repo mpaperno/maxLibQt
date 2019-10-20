@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['iconcolumn',['IconColumn',['../class_abstract_named_item.html#a214a6390614898565f12c8d40f1a6fc0a9ef529b687d47b9155f0239fe2266ca8',1,'AbstractNamedItem']]]
+  ['seconds',['Seconds',['../class_timer_edit.html#af357d9d8494ad66a18d5599357eb89dea48bfd6c0c7b449b82799ea6482575ed0',1,'TimerEdit']]],
+  ['sourcerownumberrole',['SourceRowNumberRole',['../class_grouped_items_proxy_model.html#ab63103541118a7183a47d590d664b0dea2542b51d3550112ec2a4a98c8c2ca103',1,'GroupedItemsProxyModel']]]
 ];

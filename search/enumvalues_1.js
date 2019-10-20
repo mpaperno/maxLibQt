@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['descriptioncolumn',['DescriptionColumn',['../class_abstract_named_item.html#a214a6390614898565f12c8d40f1a6fc0ad8e6eb62822caf017c86f90ec16c8e55',1,'AbstractNamedItem']]]
+  ['minutes',['Minutes',['../class_timer_edit.html#af357d9d8494ad66a18d5599357eb89dea103dad3acd8ba0f8dea72201895ef70b',1,'TimerEdit']]]
 ];

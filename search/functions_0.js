@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['abstractitemtablemodel',['AbstractItemTableModel',['../class_abstract_item_table_model.html#a72495b5428879b1b5852cf13ec9d754f',1,'AbstractItemTableModel::AbstractItemTableModel(QObject *parent=Q_NULLPTR)'],['../class_abstract_item_table_model.html#a0ea6eea9500557994436dd1f82a94ae0',1,'AbstractItemTableModel::AbstractItemTableModel(QVector&lt; const AbstractNamedItem *&gt; items, QObject *parent=Q_NULLPTR)']]],
-  ['abstractnameditem',['AbstractNamedItem',['../class_abstract_named_item.html#a59b99b425f3ca820c974e936aa1a2ab4',1,'AbstractNamedItem']]],
+  ['actionevent',['actionEvent',['../class_collapsing_tool_bar.html#aca557ea3b0c8aaa9718a7b1ec1d19d23',1,'CollapsingToolBar']]],
+  ['actionpushbutton',['ActionPushButton',['../class_action_push_button.html#af475264119bd59c4bc126091c02ad26e',1,'ActionPushButton::ActionPushButton(QAction *defaultAction, QWidget *parent=nullptr)'],['../class_action_push_button.html#acd264b27142bde96ccad0c61b2b7f0db',1,'ActionPushButton::ActionPushButton(QWidget *parent=nullptr)'],['../class_action_push_button.html#a9d6dc5d13c9939ad2d0b2ab3972f45f8',1,'ActionPushButton::ActionPushButton(const QString &amp;text, QWidget *parent=nullptr)'],['../class_action_push_button.html#a4e0b8f196537e12160d1caa7ab14ab4a',1,'ActionPushButton::ActionPushButton(const QIcon &amp;icon, const QString &amp;text, QWidget *parent=nullptr)']]],
   ['addchild',['addChild',['../class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#ab678b3cb2b351072846b69af5d133ddb',1,'GroupedItemsProxyModel::GroupedProxyItem']]],
   ['addgroup',['addGroup',['../class_grouped_items_proxy_model.html#a38d322c304e2f9bbe9b2fb882f1113a7',1,'GroupedItemsProxyModel']]],
   ['addgroups',['addGroups',['../class_grouped_items_proxy_model.html#acfbe6df1610132548987d56cc44b8a78',1,'GroupedItemsProxyModel']]],
@@ -12,6 +12,6 @@ var searchData=
   ['adjustpopupheight',['adjustPopupHeight',['../class_tree_combo_box.html#a9fc4990c686bfdfba9725c613ab9eaee',1,'TreeComboBox']]],
   ['adjustpopupwidth',['adjustPopupWidth',['../class_tree_combo_box.html#a2af6e2e95935a7882db5b3b24182f6d7',1,'TreeComboBox']]],
   ['adjustwidth',['adjustWidth',['../class_tree_combo_box_view.html#a0e4cae2120167e60d3da0f637aaec427',1,'TreeComboBoxView']]],
-  ['appdebugmessagehandler',['AppDebugMessageHandler',['../class_app_debug_message_handler.html#a107c775d4bfbc218735ba4f22d28ac2b',1,'AppDebugMessageHandler::AppDebugMessageHandler(QObject *parent=Q_NULLPTR)'],['../class_app_debug_message_handler.html#a7f2f4cffa4d23be798c356d3802adb0f',1,'AppDebugMessageHandler::AppDebugMessageHandler(AppDebugMessageHandler const &amp;)=delete']]],
+  ['appdebugoutputlevel',['appDebugOutputLevel',['../class_app_debug_message_handler.html#a33a3e3bd6c95ed5ae87f14b833a36867',1,'AppDebugMessageHandler']]],
   ['autodata',['autoData',['../class_tree_combo_box.html#a87f42fa214850a6e8ba1c9e672419a98',1,'TreeComboBox']]]
 ];
