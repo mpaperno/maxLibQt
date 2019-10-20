@@ -5,7 +5,9 @@ This is a (growing) collection of somewhat random C++ classes and QtQuick QML mo
 They are free to use in other open source projects under the terms of the GNU Public License (GPL).  For use in
 commercial or other closed-source software, you need to contact me for a license agreement.  See the LICENSE.txt file.
 
-The target Qt library version is 5.2 and up.  Some components may work with earlier versions, but not tested.
+The original target Qt library version was 5.2+. Newer components, and some that have been updated more recently,
+may require a later version, at least 5.9 (if you run into something that could be made more backwards-compatible, 
+let me know). Most (if not all) of the C++ code requires C++11 at minimum.
 
 Project home: https://github.com/mpaperno/maxLibQt
 
@@ -16,7 +18,11 @@ Project home: https://github.com/mpaperno/maxLibQt
 * Item Models
   * `GroupedItemsProxyModel` - A proxy model (`QIdentityProxyModel` subclass) which allows a grouped tree-based item presentation of a flat table data model. Typically used for visually grouping items by some shared criteria, like a category or subject. Useful in a `QTreeView` or the `TreeComboBox` from this collection.
 * Widgets
+  * `ActionPushButton` - A QPushButton which takes a default QAction, just like a QToolButton can.
+  * `BuddyLabel` - A QLabel with enhanced "buddy" capabilities like click redirect and tooltip inheritance.
+  * `CollapsingToolBar` - A QToolBar which toggles between _ToolButtonIconOnly_ and _ToolButtonTextBesideIcon_ styles based on available width.
   * `ExportableTableView` - A QTableView with features to export data as plain text or HTML.
+  * `RoundedMessageBox` - A frameless QMessageBox implementation, fully stylable via CSS or QPalette.
   * `ScrollableMessageBox` - A simple message box with a large scrollable area (a QTextEdit) for detailed text (including HTML formatting).
   * `TimerEdit` - A time value line editor which accepts negative and large times (> 23:59:59), suitable for a timer, etc.
   * `TreeComboBox` - A QComboBox control which works with a tree-based data model & view, allowing drill-down selection of items.
