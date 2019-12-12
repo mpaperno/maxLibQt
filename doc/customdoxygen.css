@@ -40,3 +40,10 @@ div.line {
 	padding: 2px 0;
 	text-indent: 0;
 }
+
+
+h2.memtitle { display: none; }
+div.memproto { border-top-left-radius: 4px; }
+table.memname tr { display: inline-table; }
+table.memname td { padding: 1px 0; }
+td.memname { font-size: larger; }
