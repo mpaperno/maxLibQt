@@ -17,6 +17,9 @@ Project home: https://github.com/mpaperno/maxLibQt
   * `AppDebugMessageHandler` - Custom debug/message handler class to work in conjunction with *qDebug()* family of functions.
 * Item Models
   * `GroupedItemsProxyModel` - A proxy model (`QIdentityProxyModel` subclass) which allows a grouped tree-based item presentation of a flat table data model. Typically used for visually grouping items by some shared criteria, like a category or subject. Useful in a `QTreeView` or the `TreeComboBox` from this collection.
+* Layouts
+  * `OverlayStackLayout` - A QStackedLayout with additional features to allow stacks with "floating" overlay widgets, such as toolbars, buttons, 
+  messages, etc., while still allowing interaction with exposed areas of the widget(s) underneath. Includes a functional image viewer example application.
 * Widgets
   * `ActionPushButton` - A QPushButton which takes a default QAction, just like a QToolButton can.
   * `BuddyLabel` - A QLabel with enhanced "buddy" capabilities like click redirect and tooltip inheritance.

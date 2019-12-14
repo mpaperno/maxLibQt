@@ -8,3 +8,6 @@
 build*/
 cmake-build-*/
 *.qmlc
+docs/
+*.tmp
+*.bak
