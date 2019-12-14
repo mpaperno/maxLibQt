@@ -20,6 +20,7 @@ var class_grouped_items_proxy_model_1_1_grouped_proxy_item =
     [ "setData", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#ab1af319f002ecf7c156e4b0c2bf63499", null ],
     [ "setItemData", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a3f63919db8168854c08b89a3d80f1310", null ],
     [ "sourceIndex", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a308de0947bcda14a58220458099eace4", null ],
+    [ "GroupedItemsProxyModel", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a37f2bb060484e1bbc4349c635ce182ce", null ],
     [ "m_childItems", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a33ab844ed9e65054b06d5db84b0da41b", null ],
     [ "m_isSourceItem", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a233aac3fad077767e47f053f6da75831", null ],
     [ "m_itemData", "class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a5f2eb087b9f5659e2e9c5bdfc2423d1f", null ],

@@ -12,7 +12,7 @@ var class_exportable_table_view =
     [ "saveToFile", "class_exportable_table_view.html#aace0b1ffdc8b5ce112996d60094959df", null ],
     [ "setHtmlStyle", "class_exportable_table_view.html#a5a2f4d6e1f4b783905c21ef030502a1c", null ],
     [ "setHtmlTemplate", "class_exportable_table_view.html#add425043b9518e284d0e750ad53b9936", null ],
-    [ "sizeHint", "class_exportable_table_view.html#a430189ee8337c896efc44d87074cccc7", null ],
+    [ "sizeHint", "class_exportable_table_view.html#a0f25dcdd08bef285ec04fd73b20bb94a", null ],
     [ "toHtml", "class_exportable_table_view.html#aa0fba058468645449355abd56f490597", null ],
     [ "toPlainText", "class_exportable_table_view.html#a77c64f3ff37d344f94c68b094c9541cd", null ],
     [ "m_htmlStyle", "class_exportable_table_view.html#a78e30e5d6891d05d537d3157256c2fa5", null ],

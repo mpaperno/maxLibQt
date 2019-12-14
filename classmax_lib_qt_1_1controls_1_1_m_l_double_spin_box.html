@@ -197,7 +197,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a363ac1961032fad038e804d82693fede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a RegExp object to validate numeric entry according to the current formatting &amp; locale specs and accounting for any prefix/suffix.  <a href="#a363ac1961032fad038e804d82693fede">More...</a><br /></td></tr>
 <tr class="separator:a363ac1961032fad038e804d82693fede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba2f65784ba6eebd388b2a5da99cb7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#afba2f65784ba6eebd388b2a5da99cb7b">escapeInputMaskChars</a> (string)</td></tr>
-<tr class="memdesc:afba2f65784ba6eebd388b2a5da99cb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <code>string</code> safe for use in Qt input mask as a literal.  <a href="#afba2f65784ba6eebd388b2a5da99cb7b">More...</a><br /></td></tr>
+<tr class="memdesc:afba2f65784ba6eebd388b2a5da99cb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <code>string</code> safe for use in <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a> input mask as a literal.  <a href="#afba2f65784ba6eebd388b2a5da99cb7b">More...</a><br /></td></tr>
 <tr class="separator:afba2f65784ba6eebd388b2a5da99cb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cd145b5207db515fc5bbec8c66d1149"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html#a4cd145b5207db515fc5bbec8c66d1149">escapeRegExpChars</a> (string)</td></tr>
 <tr class="memdesc:a4cd145b5207db515fc5bbec8c66d1149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <code>string</code> safe for use in RegExp as a literal.  <a href="#a4cd145b5207db515fc5bbec8c66d1149">More...</a><br /></td></tr>
@@ -240,7 +240,7 @@ Signals</h2></td></tr>
 <dd>
 This SpinBox does add <code>prefix</code> and <code>suffix</code> properties, but it is not in an ideal way. Specifically, in an editable spin box, the cursor is not placed in the correct position for editing the actual value (user can start typing before/after/in middle of prefix/suffix). It does still work and will auto-correct properly after editing is finished, but it is a bit awkward at best. They do work nicely in a non-editable spin box.</dd>
 <dd>
-To achieve proper prefix/suffix support, the best way would be to use a custom QValidator, just like the Controls 1 SpinBox does (or did... RIP). (search for QQuickSpinBoxValidator1) The other way is to use an input mask. Unfortunately Qt support for input masks is rather limited, and as a result one has to use a very specific mask (with the correct number of digits, notation type, localized, etc.). The number has to be typed/formatted exactly to the mask. This is not very user-friendly either, except in specific circumstances. Also the DoubleValidator does not work with input masks, so we need a custom validator in any case (see <em>regExpValidator</em> below).</dd>
+To achieve proper prefix/suffix support, the best way would be to use a custom <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qvalidator.html">QValidator</a>, just like the Controls 1 SpinBox does (or did... RIP). (search for QQuickSpinBoxValidator1) The other way is to use an input mask. Unfortunately <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a> support for input masks is rather limited, and as a result one has to use a very specific mask (with the correct number of digits, notation type, localized, etc.). The number has to be typed/formatted exactly to the mask. This is not very user-friendly either, except in specific circumstances. Also the DoubleValidator does not work with input masks, so we need a custom validator in any case (see <em>regExpValidator</em> below).</dd>
 <dd>
 The accompanying tests.qml file in this folder has an example of a customized spin box using an input mask with prefix and suffix. It is pretty generalized, but for standard notation only. </dd></dl>
 
@@ -840,8 +840,8 @@ The accompanying tests.qml file in this folder has an example of a customized sp
       </table>
 </div><div class="memdoc">
 
-<p>Make <code>string</code> safe for use in Qt input mask as a literal. </p>
-<dl class="section see"><dt>See also</dt><dd>QLineEdit::inputMask </dd></dl>
+<p>Make <code>string</code> safe for use in <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a> input mask as a literal. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qlineedit.html#inputMask-prop">QLineEdit::inputMask</a> </dd></dl>
 
 </div>
 </div>
@@ -1090,7 +1090,7 @@ The accompanying tests.qml file in this folder has an example of a customized sp
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemax_lib_qt.html">maxLibQt</a></li><li class="navelem"><a class="el" href="namespacemax_lib_qt_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="classmax_lib_qt_1_1controls_1_1_m_l_double_spin_box.html">MLDoubleSpinBox</a></li>
-    <li class="footer">Generated on Sat Oct 19 2019 23:12:46 for maxLibQt by
+    <li class="footer">Generated on Fri Dec 13 2019 23:29:02 for maxLibQt by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['datasizeformats',['DataSizeFormats',['https://doc.qt.io/qt-5/qlocale.html#DataSizeFormat-enum',0,'QLocale']]],
+  ['decoderfn',['DecoderFn',['https://doc.qt.io/qt-5/qfile.html#DecoderFn-typedef',0,'QFile']]],
+  ['diagnosticnotationoptions',['DiagnosticNotationOptions',['https://doc.qt.io/qt-5/qcborvalue.html#DiagnosticNotationOption-enum',0,'QCborValue']]],
+  ['difference_5ftype',['difference_type',['https://doc.qt.io/qt-5/qstringview.html#difference_type-typedef',0,'QStringView::difference_type()'],['https://doc.qt.io/qt-5/qlatin1string.html#difference_type-typedef',0,'QLatin1String::difference_type()'],['https://doc.qt.io/qt-5/qstring.html#difference_type-typedef',0,'QString::difference_type()'],['https://doc.qt.io/qt-5/qlist.html#difference_type-typedef',0,'QList::difference_type()'],['https://doc.qt.io/qt-5/qvarlengtharray.html#difference_type-typedef',0,'QVarLengthArray::difference_type()'],['https://doc.qt.io/qt-5/qmap.html#difference_type-typedef',0,'QMap::difference_type()'],['https://doc.qt.io/qt-5/qhash.html#difference_type-typedef',0,'QHash::difference_type()'],['https://doc.qt.io/qt-5/qvector.html#difference_type-typedef',0,'QVector::difference_type()'],['https://doc.qt.io/qt-5/qset.html#difference_type-typedef',0,'QSet::difference_type()'],['https://doc.qt.io/qt-5/qset-iterator.html#difference_type-typedef',0,'QSet::iterator::difference_type()'],['https://doc.qt.io/qt-5/qset-const-iterator.html#difference_type-typedef',0,'QSet::const_iterator::difference_type()'],['https://doc.qt.io/qt-5/qcborarray.html#difference_type-typedef',0,'QCborArray::difference_type()'],['https://doc.qt.io/qt-5/qfuture-const-iterator.html#difference_type-typedef',0,'QFuture::const_iterator::difference_type()'],['https://doc.qt.io/qt-5/qjsonarray.html#difference_type-typedef',0,'QJsonArray::difference_type()'],['https://doc.qt.io/qt-5/qlinkedlist.html#difference_type-typedef',0,'QLinkedList::difference_type()']]],
+  ['dirtyflags',['DirtyFlags',['https://doc.qt.io/qt-5/qpaintengine.html#DirtyFlag-enum',0,'QPaintEngine']]],
+  ['dockoptions',['DockOptions',['https://doc.qt.io/qt-5/qmainwindow.html#DockOption-enum',0,'QMainWindow']]],
+  ['dockwidgetareas',['DockWidgetAreas',['https://doc.qt.io/qt-5/qt.html#DockWidgetArea-enum',0,'Qt']]],
+  ['dockwidgetfeatures',['DockWidgetFeatures',['https://doc.qt.io/qt-5/qdockwidget.html#DockWidgetFeature-enum',0,'QDockWidget']]],
+  ['dropactions',['DropActions',['https://doc.qt.io/qt-5/qt.html#DropAction-enum',0,'Qt']]]
+];

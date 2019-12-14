@@ -8,5 +8,7 @@ var class_buddy_label =
     [ "mouseDoubleClickEvent", "class_buddy_label.html#a9d00e64965ab1d5ac3d2357a9504d96c", null ],
     [ "mousePressEvent", "class_buddy_label.html#a9163a550cd0b2983441b36a42405475c", null ],
     [ "mouseReleaseEvent", "class_buddy_label.html#ac24b28a9fc69864718db3de5fa682223", null ],
+    [ "QLabel", "class_buddy_label.html#ace7c173ee64696fc77638d61e5ac7782", null ],
+    [ "QLabel", "class_buddy_label.html#aece4b9e7f7416d057cca57319b8256e5", null ],
     [ "setBuddy", "class_buddy_label.html#ac14d80f2ab7e2f4dbc5453164b5f4658", null ]
 ];

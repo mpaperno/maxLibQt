@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scrollablemessagebox',['ScrollableMessageBox',['../class_scrollable_message_box.html',1,'']]]
+  ['handler',['Handler',['https://doc.qt.io/qt-5/qvariant-handler.html',0,'QVariant']]]
 ];

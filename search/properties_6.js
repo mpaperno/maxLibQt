@@ -1,5 +1,15 @@
 var searchData=
 [
+  ['genericiconname',['genericIconName',['https://doc.qt.io/qt-5/qmimetype.html#genericIconName-prop',0,'QMimeType']]],
+  ['geometry',['geometry',['https://doc.qt.io/qt-5/qscreen.html#geometry-prop',0,'QScreen::geometry()'],['https://doc.qt.io/qt-5/qwidget.html#geometry-prop',0,'QWidget::geometry()'],['https://doc.qt.io/qt-5/qgraphicswidget.html#geometry-prop',0,'QGraphicsWidget::geometry()']]],
+  ['gesturecancelpolicy',['gestureCancelPolicy',['https://doc.qt.io/qt-5/qgesture.html#gestureCancelPolicy-prop',0,'QGesture']]],
+  ['gesturetype',['gestureType',['https://doc.qt.io/qt-5/qgesture.html#gestureType-prop',0,'QGesture']]],
+  ['globalrestorepolicy',['globalRestorePolicy',['https://doc.qt.io/qt-5/qstatemachine.html#globalRestorePolicy-prop',0,'QStateMachine']]],
+  ['globalstrut',['globalStrut',['https://doc.qt.io/qt-5/qapplication.html#globalStrut-prop',0,'QApplication']]],
+  ['globpatterns',['globPatterns',['https://doc.qt.io/qt-5/qmimetype.html#globPatterns-prop',0,'QMimeType']]],
+  ['gridsize',['gridSize',['https://doc.qt.io/qt-5/qlistview.html#gridSize-prop',0,'QListView']]],
+  ['gridstyle',['gridStyle',['https://doc.qt.io/qt-5/qtableview.html#gridStyle-prop',0,'QTableView']]],
+  ['gridvisible',['gridVisible',['https://doc.qt.io/qt-5/qcalendarwidget.html#gridVisible-prop',0,'QCalendarWidget']]],
   ['groupcolumnisproxy',['groupColumnIsProxy',['../class_grouped_items_proxy_model.html#a16eaf05a03a78c37589ebcc0ed47360f',1,'GroupedItemsProxyModel']]],
   ['groupcolumnproxysrc',['groupColumnProxySrc',['../class_grouped_items_proxy_model.html#ac0e863d7d3f3f71e76090a21a89f604d',1,'GroupedItemsProxyModel']]],
   ['groupcolumnvisible',['groupColumnVisible',['../class_grouped_items_proxy_model.html#ade6f602e2b58f2fd901ecaa9db1a0976',1,'GroupedItemsProxyModel']]],

@@ -14,10 +14,14 @@ var dir_0abdee562046be6f5823d1ca8c3fd13c =
     [ "ExportableTableView.h", "_exportable_table_view_8h.html", [
       [ "ExportableTableView", "class_exportable_table_view.html", "class_exportable_table_view" ]
     ] ],
+    [ "OverlayStackLayout.cpp", "_overlay_stack_layout_8cpp.html", null ],
+    [ "OverlayStackLayout.h", "_overlay_stack_layout_8h.html", [
+      [ "OverlayStackLayout", "class_overlay_stack_layout.html", "class_overlay_stack_layout" ]
+    ] ],
     [ "RoundedMessageBox.h", "_rounded_message_box_8h.html", [
       [ "RoundedMessageBox", "class_rounded_message_box.html", "class_rounded_message_box" ]
     ] ],
-    [ "ScrollableMessageBox.cpp", "_scrollable_message_box_8cpp.html", null ],
+    [ "ScrollableMessageBox.cpp", "_scrollable_message_box_8cpp.html", "_scrollable_message_box_8cpp" ],
     [ "ScrollableMessageBox.h", "_scrollable_message_box_8h.html", [
       [ "ScrollableMessageBox", "class_scrollable_message_box.html", "class_scrollable_message_box" ]
     ] ],

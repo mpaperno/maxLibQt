@@ -87,20 +87,169 @@ $(document).ready(function(){initNavTree('_scrollable_message_box_8cpp.html','')
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ScrollableMessageBox.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_scrollable_message_box_8h_source.html">ScrollableMessageBox.h</a>&quot;</code><br />
+<code>#include &lt;QApplication&gt;</code><br />
+<code>#include &lt;QBoxLayout&gt;</code><br />
+<code>#include &lt;QScreen&gt;</code><br />
+<code>#include &lt;QScrollBar&gt;</code><br />
+<code>#include &lt;QStyle&gt;</code><br />
+<code>#include &lt;QStyleOptionButton&gt;</code><br />
+<code>#include &lt;QWindow&gt;</code><br />
 </div>
 <p><a href="_scrollable_message_box_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8d77d17b0857e30fba6cbaf21b7fa728"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html#WindowType-enum">Qt::WindowFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scrollable_message_box_8cpp.html#a8d77d17b0857e30fba6cbaf21b7fa728">defaultFlags</a> ()</td></tr>
+<tr class="separator:a8d77d17b0857e30fba6cbaf21b7fa728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7095d643651a92818860b35eb5e45f1"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qsize.html">QSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scrollable_message_box_8cpp.html#aa7095d643651a92818860b35eb5e45f1">defaultIconSize</a> (<a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qwidget.html">QWidget</a> *w)</td></tr>
+<tr class="separator:aa7095d643651a92818860b35eb5e45f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76f8391e843f47e307320c913c9d0e7f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scrollable_message_box_8cpp.html#a76f8391e843f47e307320c913c9d0e7f">layoutMinWidth</a> (<a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qlayout.html">QLayout</a> *l)</td></tr>
+<tr class="separator:a76f8391e843f47e307320c913c9d0e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af498a476817e90ed7e49ace1c6d411bb"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scrollable_message_box_8cpp.html#af498a476817e90ed7e49ace1c6d411bb">standardIcon</a> (QMessageBox::Icon icon, <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qwidget.html">QWidget</a> *w, const <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qsize.html">QSize</a> &amp;size=<a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qsize.html">QSize</a>())</td></tr>
+<tr class="separator:af498a476817e90ed7e49ace1c6d411bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a8d77d17b0857e30fba6cbaf21b7fa728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d77d17b0857e30fba6cbaf21b7fa728">&#9670;&nbsp;</a></span>defaultFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html#WindowType-enum">Qt::WindowFlags</a> defaultFlags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scrollable_message_box_8cpp_source.html#l00120">120</a> of file <a class="el" href="_scrollable_message_box_8cpp_source.html">ScrollableMessageBox.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa7095d643651a92818860b35eb5e45f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7095d643651a92818860b35eb5e45f1">&#9670;&nbsp;</a></span>defaultIconSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qsize.html">QSize</a> defaultIconSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qwidget.html">QWidget</a> *&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scrollable_message_box_8cpp_source.html#l00090">90</a> of file <a class="el" href="_scrollable_message_box_8cpp_source.html">ScrollableMessageBox.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a76f8391e843f47e307320c913c9d0e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f8391e843f47e307320c913c9d0e7f">&#9670;&nbsp;</a></span>layoutMinWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int layoutMinWidth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qlayout.html">QLayout</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scrollable_message_box_8cpp_source.html#l00420">420</a> of file <a class="el" href="_scrollable_message_box_8cpp_source.html">ScrollableMessageBox.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af498a476817e90ed7e49ace1c6d411bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af498a476817e90ed7e49ace1c6d411bb">&#9670;&nbsp;</a></span>standardIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> standardIcon </td>
+          <td>(</td>
+          <td class="paramtype">QMessageBox::Icon&#160;</td>
+          <td class="paramname"><em>icon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qwidget.html">QWidget</a> *&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qsize.html">QSize</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em> = <code><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qsize.html">QSize</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scrollable_message_box_8cpp_source.html#l00096">96</a> of file <a class="el" href="_scrollable_message_box_8cpp_source.html">ScrollableMessageBox.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0abdee562046be6f5823d1ca8c3fd13c.html">widgets</a></li><li class="navelem"><a class="el" href="_scrollable_message_box_8cpp.html">ScrollableMessageBox.cpp</a></li>
-    <li class="footer">Generated on Sat Oct 19 2019 23:12:46 for maxLibQt by
+    <li class="footer">Generated on Fri Dec 13 2019 23:29:02 for maxLibQt by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

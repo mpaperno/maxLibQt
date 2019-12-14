@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timeparts',['TimeParts',['../class_timer_edit.html#af357d9d8494ad66a18d5599357eb89de',1,'TimerEdit']]]
+  ['custombutton',['CustomButton',['../class_scrollable_message_box.html#a6c88ee67f2e9e19c54ef2a4de83e6f4f',1,'ScrollableMessageBox']]]
 ];

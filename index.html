@@ -88,12 +88,12 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="namespacemax_lib_qt.html" title="QML controls and components.">maxLibQt</a> - C++ and QML code library for the <em>Qt</em>&trade; framework. </div>  </div>
+<div class="title"><a class="el" href="namespacemax_lib_qt.html" title="QML controls and components.">maxLibQt</a> - C++ and QML code library for the <em><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a></em>&trade; framework. </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This is a (growing) collection of somewhat random C++ classes and QtQuick QML modules for use with the <a href="http://qt.io">Qt</a>&trade; framework.</p>
 <p>They are free to use in other open source projects under the terms of the GNU Public License (GPL). For use in commercial or other closed-source software, you need to contact me for a license agreement. See the <a class="el" href="_l_i_c_e_n_s_e_8txt.html">LICENSE.txt</a> file.</p>
-<p>The original target Qt library version was 5.2+. Newer components, and some that have been updated more recently, may require a later version, at least 5.9 (if you run into something that could be made more backwards-compatible, let me know). Most (if not all) of the C++ code requires C++11 at minimum.</p>
+<p>The original target <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a> library version was 5.2+. Newer components, and some that have been updated more recently, may require a later version, at least 5.9 (if you run into something that could be made more backwards-compatible, let me know). Most (if not all) of the C++ code requires C++11 at minimum.</p>
 <p>Project home: <a href="https://github.com/mpaperno/maxLibQt">https://github.com/mpaperno/maxLibQt</a></p>
 <h2>C++ Components:</h2>
 <ul>
@@ -102,18 +102,22 @@ $(document).ready(function(){initNavTree('index.html','');});
 </ul>
 </li>
 <li>Item Models<ul>
-<li><code><a class="el" href="class_grouped_items_proxy_model.html" title="GroupedItemsProxyModel allows a grouped item presentation of a flat table data model.">GroupedItemsProxyModel</a></code> - A proxy model (<code>QIdentityProxyModel</code> subclass) which allows a grouped tree-based item presentation of a flat table data model. Typically used for visually grouping items by some shared criteria, like a category or subject. Useful in a <code>QTreeView</code> or the <code><a class="el" href="class_tree_combo_box.html" title="A QComboBox control which works with a tree-based data model &amp; view, allowing drill-down selection of...">TreeComboBox</a></code> from this collection.</li>
+<li><code><a class="el" href="class_grouped_items_proxy_model.html" title="GroupedItemsProxyModel allows a grouped item presentation of a flat table data model.">GroupedItemsProxyModel</a></code> - A proxy model (<code><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qidentityproxymodel.html">QIdentityProxyModel</a></code> subclass) which allows a grouped tree-based item presentation of a flat table data model. Typically used for visually grouping items by some shared criteria, like a category or subject. Useful in a <code><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qtreeview.html">QTreeView</a></code> or the <code><a class="el" href="class_tree_combo_box.html" title="A QComboBox control which works with a tree-based data model &amp; view, allowing drill-down selection of...">TreeComboBox</a></code> from this collection.</li>
+</ul>
+</li>
+<li>Layouts<ul>
+<li><code><a class="el" href="class_overlay_stack_layout.html" title="The OverlayStackLayout re-implements a QStackedLayout with additional features to allow stacks with &quot;...">OverlayStackLayout</a></code> - A <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qstackedlayout.html">QStackedLayout</a> with additional features to allow stacks with "floating" overlay widgets, such as toolbars, buttons, messages, etc., while still allowing interaction with exposed areas of the widget(s) underneath. Includes a functional image viewer example application.</li>
 </ul>
 </li>
 <li>Widgets<ul>
-<li><code><a class="el" href="class_action_push_button.html" title="The ActionPushButton class is a QPushButton which takes a default QAction, just like a QToolButton ca...">ActionPushButton</a></code> - A QPushButton which takes a default QAction, just like a QToolButton can.</li>
-<li><code><a class="el" href="class_buddy_label.html" title="The BuddyLabel class is a QLabel with enhanced &quot;buddy&quot; capabilities.">BuddyLabel</a></code> - A QLabel with enhanced "buddy" capabilities like click redirect and tooltip inheritance.</li>
-<li><code><a class="el" href="class_collapsing_tool_bar.html" title="The CollapsingToolBar will change the QToolButton::toolButtonStyle of all added QToolButtons (via QAc...">CollapsingToolBar</a></code> - A QToolBar which toggles between <em>ToolButtonIconOnly</em> and <em>ToolButtonTextBesideIcon</em> styles based on available width.</li>
-<li><code><a class="el" href="class_exportable_table_view.html" title="The ExportableTableView class provides a regular QTableView but with features to export the data as p...">ExportableTableView</a></code> - A QTableView with features to export data as plain text or HTML.</li>
-<li><code><a class="el" href="class_rounded_message_box.html" title="The RoundedMessageBox class is a frameless QMessageBox implementation.">RoundedMessageBox</a></code> - A frameless QMessageBox implementation, fully stylable via CSS or QPalette.</li>
-<li><code><a class="el" href="class_scrollable_message_box.html" title="A simple message box with a large scrollable area (a QTextEdit ) for detailed text (including HTML fo...">ScrollableMessageBox</a></code> - A simple message box with a large scrollable area (a QTextEdit) for detailed text (including HTML formatting).</li>
+<li><code><a class="el" href="class_action_push_button.html" title="The ActionPushButton class is a QPushButton which takes a default QAction, just like a QToolButton ca...">ActionPushButton</a></code> - A <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qpushbutton.html">QPushButton</a> which takes a default <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qaction.html">QAction</a>, just like a <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qtoolbutton.html">QToolButton</a> can.</li>
+<li><code><a class="el" href="class_buddy_label.html" title="The BuddyLabel class is a QLabel with enhanced &quot;buddy&quot; capabilities.">BuddyLabel</a></code> - A <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qlabel.html">QLabel</a> with enhanced "buddy" capabilities like click redirect and tooltip inheritance.</li>
+<li><code><a class="el" href="class_collapsing_tool_bar.html" title="The CollapsingToolBar will change the QToolButton::toolButtonStyle of all added QToolButtons (via QAc...">CollapsingToolBar</a></code> - A <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qtoolbar.html">QToolBar</a> which toggles between <em>ToolButtonIconOnly</em> and <em>ToolButtonTextBesideIcon</em> styles based on available width.</li>
+<li><code><a class="el" href="class_exportable_table_view.html" title="The ExportableTableView class provides a regular QTableView but with features to export the data as p...">ExportableTableView</a></code> - A <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qtableview.html">QTableView</a> with features to export data as plain text or HTML.</li>
+<li><code><a class="el" href="class_rounded_message_box.html" title="The RoundedMessageBox class is a frameless QMessageBox implementation.">RoundedMessageBox</a></code> - A frameless <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qmessagebox.html">QMessageBox</a> implementation, fully stylable via CSS or <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qpalette.html">QPalette</a>.</li>
+<li><code><a class="el" href="class_scrollable_message_box.html" title="A simple message box with a large scrollable area (a QTextEdit ) for detailed text (including HTML fo...">ScrollableMessageBox</a></code> - A simple message box with a large scrollable area (a <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qtextedit.html">QTextEdit</a>) for detailed text (including HTML formatting).</li>
 <li><code><a class="el" href="class_timer_edit.html" title="A time value line editor which accepts negative and large times (&gt; 23:59:59), suitable for a timer,...">TimerEdit</a></code> - A time value line editor which accepts negative and large times (&gt; 23:59:59), suitable for a timer, etc.</li>
-<li><code><a class="el" href="class_tree_combo_box.html" title="A QComboBox control which works with a tree-based data model &amp; view, allowing drill-down selection of...">TreeComboBox</a></code> - A QComboBox control which works with a tree-based data model &amp; view, allowing drill-down selection of items.</li>
+<li><code><a class="el" href="class_tree_combo_box.html" title="A QComboBox control which works with a tree-based data model &amp; view, allowing drill-down selection of...">TreeComboBox</a></code> - A <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qcombobox.html">QComboBox</a> control which works with a tree-based data model &amp; view, allowing drill-down selection of items.</li>
 </ul>
 </li>
 </ul>
@@ -144,14 +148,14 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p>Copyright (c) Maxim Paperno. All rights reserved.</p>
 <p>See <a class="el" href="_l_i_c_e_n_s_e_8txt.html">LICENSE.txt</a> file for license details.</p>
 <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
-<p><em>Qt</em> is a trademark of <em>The Qt Company</em> with which neither I nor this project have any affiliation. </p>
+<p><em><a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a></em> is a trademark of <em>The <a class="elRef" target="_blank" doxygen="D:/Devel/Qt/maxLibQt/maxLibQt/doc/tagfiles/qt.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qt.html">Qt</a> Company</em> with which neither I nor this project have any affiliation. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Oct 19 2019 23:12:46 for maxLibQt by
+    <li class="footer">Generated on Fri Dec 13 2019 23:29:02 for maxLibQt by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>

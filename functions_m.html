@@ -93,14 +93,17 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_autoData
 : <a class="el" href="class_tree_combo_box.html#afc8ebb17c54f08bbc755eb93c4ab8f90">TreeComboBox</a>
 </li>
-<li>m_btnBox
-: <a class="el" href="class_scrollable_message_box.html#a72aff402b93e8a1ce208d921572c7a54">ScrollableMessageBox</a>
-</li>
 <li>m_childItems
 : <a class="el" href="class_grouped_items_proxy_model_1_1_grouped_proxy_item.html#a33ab844ed9e65054b06d5db84b0da41b">GroupedItemsProxyModel::GroupedProxyItem</a>
 </li>
 <li>m_currentIndex
 : <a class="el" href="class_tree_combo_box.html#ad76a933d53b94d9fd9537e83e91da799">TreeComboBox</a>
+</li>
+<li>m_defaultParent
+: <a class="el" href="class_grouped_items_proxy_model.html#a2de4e8a5a5b2146ea6f8a8a219f43406">GroupedItemsProxyModel</a>
+</li>
+<li>m_defaultParentGroup
+: <a class="el" href="class_grouped_items_proxy_model.html#a41ad802e43617fa7ad05f8399af7739a">GroupedItemsProxyModel</a>
 </li>
 <li>m_groupColumnIsProxy
 : <a class="el" href="class_grouped_items_proxy_model.html#a5067d70275e5d7b6b1c920abad7ba1dc">GroupedItemsProxyModel</a>
@@ -159,6 +162,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_rowMap
 : <a class="el" href="class_tree_combo_box.html#a8f0658b83690f786ba040c768fa6575c">TreeComboBox</a>
 </li>
+<li>m_rowsAreMoving
+: <a class="el" href="class_grouped_items_proxy_model.html#af23679306f5e43230cbeed98706b60ea">GroupedItemsProxyModel</a>
+</li>
 <li>m_showSeconds
 : <a class="el" href="class_timer_edit.html#a51cce59198a264500f509ea8e6eefddd">TimerEdit</a>
 </li>
@@ -174,12 +180,6 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_sourceMap
 : <a class="el" href="class_grouped_items_proxy_model.html#a2ea9a2aef6f21da45c5496abb3b90002">GroupedItemsProxyModel</a>
 </li>
-<li>m_textEdit
-: <a class="el" href="class_scrollable_message_box.html#a4e34298d6608d62d18fcb23a98c8d31c">ScrollableMessageBox</a>
-</li>
-<li>m_textLabel
-: <a class="el" href="class_scrollable_message_box.html#a87da285f56fd7346609c31e95f1e6928">ScrollableMessageBox</a>
-</li>
 <li>m_validator
 : <a class="el" href="class_timer_edit.html#ac106d7c8209d1bd2134649b88688fd96">TimerEdit</a>
 </li>
@@ -187,10 +187,16 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 : <a class="el" href="class_tree_combo_box.html#af4603295ffe43fe4356af44da68ab77a">TreeComboBox</a>
 </li>
 <li>mapFromSource()
-: <a class="el" href="class_grouped_items_proxy_model.html#a7abaeccac81511dc63469eac46827112">GroupedItemsProxyModel</a>
+: <a class="el" href="class_grouped_items_proxy_model.html#a18a64d2087b971c451af5e8d53a9f642">GroupedItemsProxyModel</a>
+</li>
+<li>mapFromSourceRow()
+: <a class="el" href="class_grouped_items_proxy_model.html#afd9c792377540740eef34992951ff21f">GroupedItemsProxyModel</a>
 </li>
 <li>mapToSource()
-: <a class="el" href="class_grouped_items_proxy_model.html#ab22f03afff00a212df6b45b83854cab1">GroupedItemsProxyModel</a>
+: <a class="el" href="class_grouped_items_proxy_model.html#a3968357cc349b12cde7f14dbf3dd584c">GroupedItemsProxyModel</a>
+</li>
+<li>mapToSourceRow()
+: <a class="el" href="class_grouped_items_proxy_model.html#ade0b51624c9ebac57b00de1640ff6839">GroupedItemsProxyModel</a>
 </li>
 <li>maximumTime
 : <a class="el" href="class_timer_edit.html#a28e2a84f4113b729f395a9db52ce84f2">TimerEdit</a>
@@ -204,8 +210,8 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>messagePattern()
 : <a class="el" href="class_app_debug_message_handler.html#a2069b737ccb571fd09962025712d01b8">AppDebugMessageHandler</a>
 </li>
-<li>minimumTime
-: <a class="el" href="class_timer_edit.html#ab4d8a3aacda5f81dc46ba16c2cd0a02f">TimerEdit</a>
+<li>minimumTime()
+: <a class="el" href="class_timer_edit.html#a297cf79119debba26add48a35f007b3f">TimerEdit</a>
 </li>
 <li>Minutes
 : <a class="el" href="class_timer_edit.html#af357d9d8494ad66a18d5599357eb89dea103dad3acd8ba0f8dea72201895ef70b">TimerEdit</a>
@@ -222,13 +228,16 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>mouseReleaseEvent()
 : <a class="el" href="class_buddy_label.html#ac24b28a9fc69864718db3de5fa682223">BuddyLabel</a>
 </li>
+<li>move()
+: <a class="el" href="class_grouped_items_proxy_model.html#af74eb41bb94aa8afd52fe9bad4fd8010">GroupedItemsProxyModel</a>
+</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Oct 19 2019 23:12:46 for maxLibQt by
+    <li class="footer">Generated on Fri Dec 13 2019 23:29:02 for maxLibQt by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
   </ul>
