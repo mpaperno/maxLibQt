@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['rangeaccessflag',['RangeAccessFlag',['https://doc.qt.io/qt-5/qopenglbuffer.html#RangeAccessFlag-enum',0,'QOpenGLBuffer']]],
+  ['readelementtextbehaviour',['ReadElementTextBehaviour',['https://doc.qt.io/qt-5/qxmlstreamreader.html#ReadElementTextBehaviour-enum',0,'QXmlStreamReader']]],
+  ['realnumbernotation',['RealNumberNotation',['https://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum',0,'QTextStream']]],
+  ['reason',['Reason',['https://doc.qt.io/qt-5/qcontextmenuevent.html#Reason-enum',0,'QContextMenuEvent::Reason()'],['https://doc.qt.io/qt-5/qgraphicsscenecontextmenuevent.html#Reason-enum',0,'QGraphicsSceneContextMenuEvent::Reason()']]],
+  ['recursionmode',['RecursionMode',['https://doc.qt.io/qt-5/qmutex.html#RecursionMode-enum',0,'QMutex::RecursionMode()'],['https://doc.qt.io/qt-5/qreadwritelock.html#RecursionMode-enum',0,'QReadWriteLock::RecursionMode()']]],
+  ['regiontype',['RegionType',['https://doc.qt.io/qt-5/qregion.html#RegionType-enum',0,'QRegion']]],
+  ['relationflag',['RelationFlag',['https://doc.qt.io/qt-5/qaccessible.html#RelationFlag-enum',0,'QAccessible']]],
+  ['renderabletype',['RenderableType',['https://doc.qt.io/qt-5/qsurfaceformat.html#RenderableType-enum',0,'QSurfaceFormat']]],
+  ['renderflag',['RenderFlag',['https://doc.qt.io/qt-5/qtextitem.html#RenderFlag-enum',0,'QTextItem::RenderFlag()'],['https://doc.qt.io/qt-5/qwidget.html#RenderFlag-enum',0,'QWidget::RenderFlag()']]],
+  ['renderhint',['RenderHint',['https://doc.qt.io/qt-5/qpainter.html#RenderHint-enum',0,'QPainter']]],
+  ['requestsoftwareinputpanel',['RequestSoftwareInputPanel',['https://doc.qt.io/qt-5/qstyle.html#RequestSoftwareInputPanel-enum',0,'QStyle']]],
+  ['resizemode',['ResizeMode',['https://doc.qt.io/qt-5/qheaderview.html#ResizeMode-enum',0,'QHeaderView::ResizeMode()'],['https://doc.qt.io/qt-5/qlistview.html#ResizeMode-enum',0,'QListView::ResizeMode()']]],
+  ['resourcetype',['ResourceType',['https://doc.qt.io/qt-5/qtextdocument.html#ResourceType-enum',0,'QTextDocument']]],
+  ['restarthint',['RestartHint',['https://doc.qt.io/qt-5/qsessionmanager.html#RestartHint-enum',0,'QSessionManager']]],
+  ['restorepolicy',['RestorePolicy',['https://doc.qt.io/qt-5/qstate.html#RestorePolicy-enum',0,'QState']]],
+  ['resultflag',['ResultFlag',['https://doc.qt.io/qt-5/qgesturerecognizer.html#ResultFlag-enum',0,'QGestureRecognizer']]],
+  ['role',['Role',['https://doc.qt.io/qt-5/qaccessible.html#Role-enum',0,'QAccessible']]],
+  ['roles',['Roles',['https://doc.qt.io/qt-5/qdirmodel.html#Roles-enum',0,'QDirModel::Roles()'],['https://doc.qt.io/qt-5/qfilesystemmodel.html#Roles-enum',0,'QFileSystemModel::Roles()']]],
+  ['rowwrappolicy',['RowWrapPolicy',['https://doc.qt.io/qt-5/qformlayout.html#RowWrapPolicy-enum',0,'QFormLayout']]]
+];
