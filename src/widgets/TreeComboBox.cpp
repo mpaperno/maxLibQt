@@ -472,7 +472,7 @@ bool TreeComboBox::eventFilter(QObject *object, QEvent *event)
 			QMouseEvent * mouseEvent = static_cast<QMouseEvent *>(event);
 			const QModelIndex index = view()->indexAt(mouseEvent->pos());
 			if (!index.isValid())
-				return false;\
+				return false;
 			if (!view()->visualRect(index).contains(mouseEvent->pos()) || !(index.flags() & Qt::ItemIsSelectable)) {
 				// do not hide popup if clicking on expander icon or a non-selectable item
 				m_skipNextHide = true;
